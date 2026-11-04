@@ -1,0 +1,391 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "name": "Central University Library",
+      "code": "LIB",
+      "description": "Central repository of books, journals, and lending catalog.",
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "name": "Accounts & Student Finance",
+      "code": "ACC",
+      "description": "Tuition, hostel dues, laboratory fees, and scholarship clearance.",
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "name": "Hostel & Residential Board",
+      "code": "HST",
+      "description": "Student hostel room allotments, room inventory, and mess dues.",
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "name": "Computer Science & Engineering",
+      "code": "CSE",
+      "description": "Academic department clearance, lab equipment, and faculty sign-offs.",
+      "is_active": 1
+    },
+    {
+      "id": 5,
+      "name": "Examination Cell & Registrar",
+      "code": "EXM",
+      "description": "Admit cards, hall ticket clearance, and provisional degree approvals.",
+      "is_active": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@campusclear.edu",
+      "role": "admin",
+      "status": "active",
+      "password_plain": "Admin@123"
+    },
+    {
+      "id": 2,
+      "username": "staff_lib",
+      "email": "library@campusclear.edu",
+      "role": "staff",
+      "status": "active",
+      "password_plain": "Staff@123"
+    },
+    {
+      "id": 3,
+      "username": "staff_acc",
+      "email": "accounts@campusclear.edu",
+      "role": "staff",
+      "status": "active",
+      "password_plain": "Staff@123"
+    },
+    {
+      "id": 4,
+      "username": "staff_hst",
+      "email": "hostel@campusclear.edu",
+      "role": "staff",
+      "status": "active",
+      "password_plain": "Staff@123"
+    },
+    {
+      "id": 5,
+      "username": "staff_cse",
+      "email": "cse@campusclear.edu",
+      "role": "staff",
+      "status": "active",
+      "password_plain": "Staff@123"
+    },
+    {
+      "id": 6,
+      "username": "staff_exm",
+      "email": "exam@campusclear.edu",
+      "role": "staff",
+      "status": "active",
+      "password_plain": "Staff@123"
+    },
+    {
+      "id": 10,
+      "username": "TU6241103111002",
+      "email": "priya.patel@student.edu",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123"
+    },
+    {
+      "id": 11,
+      "username": "TU6241103111003",
+      "email": "rahul.sharma@student.edu",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123"
+    },
+    {
+      "id": 12,
+      "username": "TU6241103111004",
+      "email": "ananya.iyer@student.edu",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123"
+    }
+  ],
+  "staff": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "staff_code": "STF-LIB-01",
+      "full_name": "Dr. Arvind Rao",
+      "email": "library@campusclear.edu",
+      "phone": "9876543210",
+      "department_id": 1,
+      "designation": "Chief Librarian"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "staff_code": "STF-ACC-01",
+      "full_name": "Mrs. Sunita Verma",
+      "email": "accounts@campusclear.edu",
+      "phone": "9876543211",
+      "department_id": 2,
+      "designation": "Senior Accounts Officer"
+    },
+    {
+      "id": 3,
+      "user_id": 4,
+      "staff_code": "STF-HST-01",
+      "full_name": "Col. R. S. Rathore",
+      "email": "hostel@campusclear.edu",
+      "phone": "9876543212",
+      "department_id": 3,
+      "designation": "Chief Warden"
+    },
+    {
+      "id": 4,
+      "user_id": 5,
+      "staff_code": "STF-CSE-01",
+      "full_name": "Prof. K. Swaminathan",
+      "email": "cse@campusclear.edu",
+      "phone": "9876543213",
+      "department_id": 4,
+      "designation": "HOD Computer Science"
+    },
+    {
+      "id": 5,
+      "user_id": 6,
+      "staff_code": "STF-EXM-01",
+      "full_name": "Dr. M. K. Sharma",
+      "email": "exam@campusclear.edu",
+      "phone": "9876543214",
+      "department_id": 5,
+      "designation": "Controller of Examinations"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "user_id": 10,
+      "roll_number": "TU6241103111002",
+      "full_name": "Priya Patel",
+      "email": "priya.patel@student.edu",
+      "phone": "9845012345",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 6,
+      "cgpa": 8.85
+    },
+    {
+      "id": 2,
+      "user_id": 11,
+      "roll_number": "TU6241103111003",
+      "full_name": "Rahul Sharma",
+      "email": "rahul.sharma@student.edu",
+      "phone": "9845012346",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 6,
+      "cgpa": 8.2
+    },
+    {
+      "id": 3,
+      "user_id": 12,
+      "roll_number": "TU6241103111004",
+      "full_name": "Ananya Iyer",
+      "email": "ananya.iyer@student.edu",
+      "phone": "9845012347",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 6,
+      "cgpa": 9.4
+    }
+  ],
+  "clearance_status": [
+    {
+      "id": 1,
+      "student_id": 1,
+      "department_id": 1,
+      "status": "pending",
+      "remarks": "Overdue library book unreturned",
+      "updated_at": "2026-11-01 10:30:00"
+    },
+    {
+      "id": 2,
+      "student_id": 1,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "Semester fees fully paid",
+      "updated_at": "2026-11-01 11:00:00"
+    },
+    {
+      "id": 3,
+      "student_id": 1,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "Hostel room inventory verified",
+      "updated_at": "2026-11-01 11:15:00"
+    },
+    {
+      "id": 4,
+      "student_id": 1,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All lab practicals completed",
+      "updated_at": "2026-11-01 11:20:00"
+    },
+    {
+      "id": 5,
+      "student_id": 1,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "Exam clearance approved",
+      "updated_at": "2026-11-01 11:25:00"
+    },
+    {
+      "id": 6,
+      "student_id": 3,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "No dues",
+      "updated_at": "2026-11-01 10:00:00"
+    },
+    {
+      "id": 7,
+      "student_id": 3,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "Fees cleared",
+      "updated_at": "2026-11-01 10:00:00"
+    },
+    {
+      "id": 8,
+      "student_id": 3,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "Room cleared",
+      "updated_at": "2026-11-01 10:00:00"
+    },
+    {
+      "id": 9,
+      "student_id": 3,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "Academics cleared",
+      "updated_at": "2026-11-01 10:00:00"
+    },
+    {
+      "id": 10,
+      "student_id": 3,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "Exam cleared",
+      "updated_at": "2026-11-01 10:00:00"
+    }
+  ],
+  "dues": [
+    {
+      "id": 1,
+      "student_id": 1,
+      "department_id": 1,
+      "title": "Overdue Book Fine: Operating Systems 10th Ed",
+      "description": "Book due on 15 Oct, returned 12 days late.",
+      "amount": 450,
+      "status": "pending",
+      "created_at": "2026-10-28 14:20:00"
+    },
+    {
+      "id": 2,
+      "student_id": 2,
+      "department_id": 2,
+      "title": "Lab Component Fee Semester 6",
+      "description": "Cloud computing lab fee balance.",
+      "amount": 1200,
+      "status": "pending",
+      "created_at": "2026-10-29 09:15:00"
+    }
+  ],
+  "disputes": [
+    {
+      "id": 1,
+      "student_id": 1,
+      "due_id": 1,
+      "department_id": 1,
+      "subject": "Dispute regarding book return date",
+      "description": "Book was deposited in the drop-box on 20th Oct during library maintenance.",
+      "status": "open",
+      "resolution_remarks": "",
+      "created_at": "2026-10-29 11:00:00"
+    }
+  ],
+  "service_categories": [
+    {
+      "id": 1,
+      "name": "Bonafide Clearance Certificate",
+      "description": "Official institutional bonafide document confirming full zero-dues clearance.",
+      "requires_full_clearance": 1,
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "name": "End-Semester Exam Hall Ticket",
+      "description": "Admit card clearance for upcoming university semester examinations.",
+      "requires_full_clearance": 1,
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "name": "Institutional ID Card Re-issuance",
+      "description": "Application for replacement of lost, worn, or damaged RFID campus card.",
+      "requires_full_clearance": 0,
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "name": "Official University Transcript",
+      "description": "Complete attested academic transcript issued to alumni or graduating seniors.",
+      "requires_full_clearance": 1,
+      "is_active": 1
+    },
+    {
+      "id": 5,
+      "name": "Library Caution Deposit Refund",
+      "description": "Reconciliation and return of cautionary deposit at graduation or withdrawal.",
+      "requires_full_clearance": 1,
+      "is_active": 1
+    }
+  ],
+  "service_requests": [
+    {
+      "id": 1,
+      "request_number": "REQ-2026-8921B",
+      "student_id": 3,
+      "service_id": 1,
+      "purpose": "Higher studies application to Georgia Tech",
+      "status": "approved",
+      "clearance_snapshot": "cleared",
+      "qr_token": "CERT-ANANYA-IYER-2026",
+      "created_at": "2026-11-02 09:30:00"
+    },
+    {
+      "id": 2,
+      "request_number": "REQ-2026-4410A",
+      "student_id": 1,
+      "service_id": 3,
+      "purpose": "Lost card in central cafeteria",
+      "status": "in_progress",
+      "clearance_snapshot": "pending",
+      "qr_token": "REQ-TOKEN-PRIYA-CARD",
+      "created_at": "2026-11-03 14:10:00"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "action": "SYSTEM_INITIALIZATION",
+      "entity_type": "DATABASE",
+      "details": "CampusClear Cloud Engine Initialized",
+      "created_at": "2026-11-04 12:00:00"
+    }
+  ]
+}

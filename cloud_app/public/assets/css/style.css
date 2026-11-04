@@ -1,0 +1,211 @@
+/* CampusClear Custom Visual Styles - Modern Sleek Glassmorphism Aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #0ea5e9;
+    --dark-bg: #0f172a;
+    --sidebar-bg: #1e293b;
+    --card-bg: #ffffff;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --success-bg: #dcfce7;
+    --success-text: #15803d;
+    --warning-bg: #fef9c3;
+    --warning-text: #a16207;
+    --danger-bg: #ffe4e6;
+    --danger-text: #be123c;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.03);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Glassmorphism Cards */
+.card-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-glass:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Header Gradient Cards */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%) !important;
+    color: #ffffff;
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+    color: #ffffff;
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%) !important;
+    color: #ffffff;
+}
+
+.bg-gradient-danger {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%) !important;
+    color: #ffffff;
+}
+
+/* Sidebar Layout */
+#wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+#sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    background: var(--sidebar-bg);
+    color: #f1f5f9;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+#sidebar .sidebar-header {
+    padding: 1.5rem 1.25rem;
+    background: #0f172a;
+    border-bottom: 1px solid #334155;
+}
+
+#sidebar .components {
+    padding: 1rem 0;
+}
+
+#sidebar ul li a {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+#sidebar ul li a i {
+    font-size: 1.2rem;
+    margin-right: 0.85rem;
+    width: 24px;
+    text-align: center;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li.active > a {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--primary-color);
+}
+
+/* Content Area */
+#content {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8fafc;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem 1.5rem;
+}
+
+/* Navbar */
+.top-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 0.75rem 1.5rem;
+}
+
+/* Status Clearance Hero Pill */
+.clearance-pill-cleared {
+    background: #dcfce7;
+    color: #15803d;
+    border: 2px solid #86efac;
+}
+
+.clearance-pill-pending {
+    background: #fef9c3;
+    color: #a16207;
+    border: 2px solid #fde047;
+}
+
+/* Metric KPI Cards */
+.kpi-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.kpi-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Certificate Print View */
+@media print {
+    #sidebar, .top-navbar, .no-print {
+        display: none !important;
+    }
+    #content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    body {
+        background: #ffffff !important;
+    }
+}
+
+/* Table Polish */
+.table-custom {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.table-custom tbody tr {
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+    border-radius: 0.5rem;
+}
+
+.table-custom tbody tr td:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.table-custom tbody tr td:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "campusclear-cloud",
+  "version": "2.0.0",
+  "description": "Continuous Digital Student Clearance and College Service Management Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "clearance",
+    "erp",
+    "student",
+    "cloud"
+  ],
+  "author": "CampusClear",
+  "license": "ISC"
+}
+
