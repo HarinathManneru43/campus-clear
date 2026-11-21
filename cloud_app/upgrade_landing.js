@@ -447,3 +447,4 @@ code = code.replace(oldLoginBrand, newLoginBrand);
 
 fs.writeFileSync(serverJsPath, code, 'utf8');
 console.log("Successfully upgraded landing page, static file handler, and university logo branding!");
+
