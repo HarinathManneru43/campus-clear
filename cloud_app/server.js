@@ -294,7 +294,7 @@ const server = http.createServer((req, res) => {
 
     const user = getSessionUser(req);
 
-            // ROUTE: Public Homepage
+                // ROUTE: Public Homepage
     if (pathname === '/') {
         const data = loadDb();
         const totalStudents = data.students.length;
@@ -310,7 +310,7 @@ const server = http.createServer((req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takshashila University • Continuous Clearance & Academic Portal</title>
+    <title>Takshashila University • Continuous Clearance & Academic Platform</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -333,7 +333,7 @@ const server = http.createServer((req, res) => {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
         }
-        h1, h2, h3, h4, .font-heading {
+        h1, h2, h3, h4, h5, .font-heading {
             font-family: 'Outfit', sans-serif;
             letter-spacing: -0.02em;
         }
@@ -352,7 +352,7 @@ const server = http.createServer((req, res) => {
             border: 2px solid var(--tu-orange-light);
         }
 
-        /* Hero Banner with Rich Color Grade */
+        /* Hero Banner */
         .hero-banner {
             position: relative;
             background: linear-gradient(180deg, rgba(6, 11, 24, 0.55) 0%, rgba(15, 28, 63, 0.72) 40%, rgba(6, 11, 24, 0.98) 100%),
@@ -420,20 +420,46 @@ const server = http.createServer((req, res) => {
             box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
-        /* Vivid Buttons */
-        .btn-gradient-primary {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: #ffffff;
-            border: none;
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.6), 0 0 0 1px rgba(255,255,255,0.2);
-            transition: all 0.2s ease;
+        /* NEW: WHITE GLASSY BUTTON WITH TOUCH SHIMMER EFFECT */
+        .btn-white-glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            color: #0b1536 !important;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.3px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        .btn-gradient-primary:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.8);
-            color: #ffffff;
+        .btn-white-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+            transform: skewX(-25deg);
+            transition: 0.6s ease;
         }
+        .btn-white-glass:hover, .btn-white-glass:active, .btn-white-glass:focus {
+            background: #ffffff;
+            color: #1d4ed8 !important;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 18px 45px rgba(255, 255, 255, 0.5), 0 0 35px rgba(56, 189, 248, 0.75);
+            border-color: #ffffff;
+        }
+        .btn-white-glass:hover::before {
+            left: 150%;
+        }
+
         .btn-gradient-orange {
             background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
             color: #ffffff;
@@ -547,7 +573,36 @@ const server = http.createServer((req, res) => {
             font-weight: 700;
         }
 
-        /* Access Gateway Cards */
+        /* Process Step Cards */
+        .step-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 1.75rem;
+            position: relative;
+            height: 100%;
+            transition: all 0.25s;
+        }
+        .step-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .step-num {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--tu-blue) 0%, #1e40af 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Gateway Cards */
         .gateway-card {
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -570,6 +625,32 @@ const server = http.createServer((req, res) => {
             font-size: 1.75rem;
             margin-bottom: 1.25rem;
         }
+
+        /* FAQ Accordion */
+        .accordion-item {
+            background: rgba(15, 28, 63, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem !important;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        .accordion-button {
+            background: transparent !important;
+            color: #ffffff !important;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: none !important;
+        }
+        .accordion-button::after {
+            filter: invert(1);
+        }
+        .accordion-body {
+            color: #cbd5e1;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            line-height: 1.7;
+        }
     </style>
 </head>
 <body>
@@ -588,14 +669,14 @@ const server = http.createServer((req, res) => {
                 <a href="/verify" class="btn btn-outline-light rounded-pill px-3.5 btn-sm fw-bold">
                     <i class="bi bi-qr-code-scan me-1 text-warning"></i> QR Verify
                 </a>
-                <a href="/login" class="btn btn-gradient-primary rounded-pill px-4 btn-sm fw-bold">
+                <a href="/login" class="btn btn-white-glass rounded-pill px-4 btn-sm fw-bold shadow">
                     <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Portal
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Banner with Color-Graded Campus Background -->
+    <!-- SECTION 1: HERO BANNER -->
     <div class="hero-banner text-center">
         <div class="container position-relative">
             <!-- Center Emblem Crest -->
@@ -619,10 +700,10 @@ const server = http.createServer((req, res) => {
                 Automated continuous clearance across Central Library, Accounts & Finance, Hostel Board, AIDS Department, and Exam Cell with live QR code validation for all 62 V-Semester students.
             </p>
 
-            <!-- Action Buttons -->
+            <!-- Action Buttons with White Glassy Effect -->
             <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
-                <a href="/login" class="btn btn-gradient-primary btn-lg rounded-pill px-5 fw-extrabold font-heading">
-                    Access My Portal <i class="bi bi-arrow-right ms-2"></i>
+                <a href="/login" class="btn btn-white-glass btn-lg rounded-pill px-5 py-3">
+                    Access My Portal <i class="bi bi-arrow-right ms-2 text-primary"></i>
                 </a>
                 <a href="/verify" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold" style="border-width: 2px;">
                     <i class="bi bi-patch-check-fill me-2 text-warning"></i> Public QR Verify
@@ -646,7 +727,7 @@ const server = http.createServer((req, res) => {
         </div>
     </div>
 
-    <!-- Vibrant Statistics Counter Strip -->
+    <!-- SECTION 2: LIVE STATISTICS STRIP -->
     <div class="container my-5">
         <div class="row g-3">
             <div class="col-6 col-md-3">
@@ -680,7 +761,7 @@ const server = http.createServer((req, res) => {
         </div>
     </div>
 
-    <!-- Campus & Hostel Facilities Showcase with Colorgraded Photos -->
+    <!-- SECTION 3: CAMPUS INFRASTRUCTURE SHOWCASE -->
     <div class="container my-5 py-2">
         <div class="text-center mb-4">
             <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8;">
@@ -747,7 +828,124 @@ const server = http.createServer((req, res) => {
         </div>
     </div>
 
-    <!-- Dedicated Portals Gateways -->
+    <!-- SECTION 4: 4-STEP CLEARANCE PROCESS ROADMAP -->
+    <div class="container my-5 py-4 border-top border-secondary border-opacity-25">
+        <div class="text-center mb-5">
+            <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399;">
+                <i class="bi bi-cpu-fill me-1"></i> Automated Workflow
+            </span>
+            <h2 class="fw-extrabold text-white mt-2 font-heading">How Continuous Clearance Works</h2>
+            <p class="text-muted small mx-auto" style="max-width: 600px;">Zero manual paper forms. Replaces weeks of running from desk to desk with automated background synchronization.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="step-box">
+                    <div class="step-num">1</div>
+                    <h5 class="fw-bold text-white font-heading">Continuous Sync</h5>
+                    <p class="small text-muted mb-0">Library catalog, accounts cashier, and hostel wardens continuously log records in the university database.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="step-box">
+                    <div class="step-num" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">2</div>
+                    <h5 class="fw-bold text-white font-heading">Live Calculation</h5>
+                    <p class="small text-muted mb-0">The clearance engine instantly calculates real-time clearance status across all 5 departments for each student.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="step-box">
+                    <div class="step-num" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">3</div>
+                    <h5 class="fw-bold text-white font-heading">In-Portal Dispute</h5>
+                    <p class="small text-muted mb-0">Students can contest any fee or fine with 1-click in-portal dispute submission for rapid faculty resolution.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="step-box">
+                    <div class="step-num" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);">4</div>
+                    <h5 class="fw-bold text-white font-heading">Instant QR Seal</h5>
+                    <p class="small text-muted mb-0">Once cleared, official institutional clearance certificates with cryptographic QR seals are issued instantly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 5: V SEMESTER SUBJECTS & CURRICULUM MATRIX -->
+    <div class="container my-5 py-4 border-top border-secondary border-opacity-25">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+            <div>
+                <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4); color: var(--tu-orange-light);">
+                    <i class="bi bi-book-half me-1"></i> Academic Courses
+                </span>
+                <h2 class="fw-extrabold text-white mt-2 font-heading mb-1">V Semester Curriculum & Faculty In-Charge</h2>
+                <p class="text-muted small mb-0">Takshashila University • AI & Data Science (AIDS) Department</p>
+            </div>
+            <div class="mt-3 mt-md-0">
+                <a href="/login" class="btn btn-outline-info rounded-pill px-4 btn-sm fw-bold"><i class="bi bi-calendar3 me-1"></i> View Full Timetable &rarr;</a>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            ${(data.subjects || []).map((s, idx) => `
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3.5 rounded-4 h-100" style="background: rgba(15, 28, 63, 0.55); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.2s;">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge bg-dark font-monospace text-info border border-secondary">${s.code}</span>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">${s.short}</span>
+                        </div>
+                        <h6 class="fw-bold text-white mb-2 font-heading">${s.name}</h6>
+                        <small class="text-secondary d-flex align-items-center"><i class="bi bi-person-fill text-warning me-1.5"></i> ${s.faculty}</small>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    </div>
+
+    <!-- SECTION 6: FACULTY LEADERSHIP HIGHLIGHTS -->
+    <div class="container my-5 py-4 border-top border-secondary border-opacity-25">
+        <div class="text-center mb-5">
+            <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(59, 130, 246, 0.18); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd;">
+                <i class="bi bi-award-fill me-1"></i> Leadership
+            </span>
+            <h2 class="fw-extrabold text-white mt-2 font-heading">Department Leadership & Administration</h2>
+            <p class="text-muted small mx-auto" style="max-width: 600px;">Leading the continuous clearance and academic sign-off processes for all 62 students.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="facility-card p-4 text-center h-100">
+                    <div class="bg-primary bg-opacity-20 text-primary p-3 rounded-circle d-inline-block mb-3 fs-2" style="width: 75px; height: 75px; display: inline-flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+                    <h5 class="fw-bold text-white font-heading mb-1">Dr. M Senthil</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill mb-2">HOD - AI & Data Science</span>
+                    <p class="small text-muted mb-0">Course Lead for Responsible AI & Mini Project-II. Authorizes departmental clearance and project viva eligibility.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="facility-card p-4 text-center h-100">
+                    <div class="bg-warning bg-opacity-20 text-warning p-3 rounded-circle d-inline-block mb-3 fs-2" style="width: 75px; height: 75px; display: inline-flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-shield-fill"></i>
+                    </div>
+                    <h5 class="fw-bold text-white font-heading mb-1">Col. R. S. Rathore</h5>
+                    <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill mb-2">Chief Warden</span>
+                    <p class="small text-muted mb-0">Oversees residential campus, hostel room asset audits, mess fee reconciliations, and boarding clearance.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="facility-card p-4 text-center h-100">
+                    <div class="bg-success bg-opacity-20 text-success p-3 rounded-circle d-inline-block mb-3 fs-2" style="width: 75px; height: 75px; display: inline-flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-check-all"></i>
+                    </div>
+                    <h5 class="fw-bold text-white font-heading mb-1">Dr. M. K. Sharma</h5>
+                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill mb-2">Controller of Examinations</span>
+                    <p class="small text-muted mb-0">Final institutional authority for end-semester hall ticket releases, mark sheets, and degree clearance certificates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 7: PORTAL GATEWAYS -->
     <div class="container my-5 py-4 border-top border-secondary border-opacity-25">
         <div class="text-center mb-4">
             <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4); color: var(--tu-orange-light);">
@@ -768,7 +966,7 @@ const server = http.createServer((req, res) => {
                             Access for all 62 enrolled students. Check continuous clearance, settle dues, download tamper-proof QR certificates, and view the <strong>V-Sem Class Timetable</strong>.
                         </p>
                     </div>
-                    <a href="/login" class="btn btn-gradient-primary rounded-pill mt-3 fw-bold w-100">Student Sign In &rarr;</a>
+                    <a href="/login" class="btn btn-white-glass rounded-pill mt-3 w-100">Student Sign In &rarr;</a>
                 </div>
             </div>
 
@@ -804,6 +1002,130 @@ const server = http.createServer((req, res) => {
         </div>
     </div>
 
+    <!-- SECTION 8: FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+    <div class="container my-5 py-4 border-top border-secondary border-opacity-25">
+        <div class="text-center mb-5">
+            <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8;">
+                <i class="bi bi-question-circle-fill me-1"></i> FAQ Guide
+            </span>
+            <h2 class="fw-extrabold text-white mt-2 font-heading">Frequently Asked Questions</h2>
+            <p class="text-muted small mx-auto" style="max-width: 600px;">Clear guidance on institutional clearance, dispute policies, and exam certifications.</p>
+        </div>
+
+        <div class="mx-auto" style="max-width: 800px;">
+            <div class="accordion" id="tuFaqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            <i class="bi bi-patch-question-fill text-primary me-2"></i> When is departmental clearance mandatory?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#tuFaqAccordion">
+                        <div class="accordion-body">
+                            Departmental clearance is mandatory prior to the issuance of End-Semester Examination Hall Tickets, registration for higher semesters, Bonafide certificates for internships/passports, and issuance of provisional graduation degrees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            <i class="bi bi-receipt text-warning me-2"></i> How do I contest a fine or incorrect due?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#tuFaqAccordion">
+                        <div class="accordion-body">
+                            Log in to your Student Portal, navigate to the <strong>"My Dues"</strong> tab, and click <strong>"Raise Dispute"</strong> on the specific item. Provide your justification (such as book return drop-box date or fee receipt number). Department staff will review and update your status in real time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            <i class="bi bi-kanban text-info me-2"></i> How is Mini Project-II (U24CSW501) clearance sign-off handled?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#tuFaqAccordion">
+                        <div class="accordion-body">
+                            Mini Project-II clearance is directly managed in the AIDS Department Portal by <strong>Dr. M Senthil (HOD)</strong>. Once your project abstract, periodic code reviews, and guide evaluations are completed, your department clearance will automatically turn to <code>CLEARED</code>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            <i class="bi bi-qr-code text-success me-2"></i> How can external parties verify my certificate?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#tuFaqAccordion">
+                        <div class="accordion-body">
+                            Every digital clearance certificate is embedded with an official cryptographic QR code. Any university official, recruiting company, or parent can scan the QR code with their phone camera or enter your Register Number on the public <strong>Verify Portal</strong> (<code>/verify</code>) to get instant live verification.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 9: HELPDESK & CAMPUS CONTACTS -->
+    <div class="container my-5 py-4 border-top border-secondary border-opacity-25">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <span class="badge rounded-pill px-3 py-1.5 fw-bold text-uppercase" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8;">
+                    <i class="bi bi-telephone-fill me-1"></i> Support Matrix
+                </span>
+                <h2 class="fw-extrabold text-white mt-2 font-heading">Campus Helpdesk & Desk Contacts</h2>
+                <p class="text-muted small mb-4">Need in-person assistance? Reach out directly to your assigned departmental coordinators:</p>
+
+                <div class="d-flex flex-column gap-3">
+                    <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);">
+                        <i class="bi bi-mortarboard-fill text-primary fs-3"></i>
+                        <div>
+                            <strong class="text-white d-block">AIDS Department Office</strong>
+                            <small class="text-muted">Academic Block Room 302 • HOD: Dr. M Senthil • Ext: 401</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);">
+                        <i class="bi bi-book-fill text-info fs-3"></i>
+                        <div>
+                            <strong class="text-white d-block">Central Library Circulation Desk</strong>
+                            <small class="text-muted">Ground Floor Library Building • In-Charge: Dr. Arvind Rao • Ext: 102</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);">
+                        <i class="bi bi-houses-fill text-warning fs-3"></i>
+                        <div>
+                            <strong class="text-white d-block">Hostel Wardens Office</strong>
+                            <small class="text-muted">Hostel Block A Office • Chief Warden: Col. R. S. Rathore • Ext: 305</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-4 rounded-4" style="background: linear-gradient(145deg, rgba(15, 28, 63, 0.8) 0%, rgba(6, 11, 24, 0.95) 100%); border: 1px solid rgba(56, 189, 248, 0.3); box-shadow: 0 20px 45px rgba(0,0,0,0.5);">
+                    <h4 class="fw-bold text-white font-heading mb-2"><i class="bi bi-shield-check text-success me-2"></i> Fast Student Access</h4>
+                    <p class="small text-muted mb-4">All 62 enrolled V-Semester AI & Data Science students can directly sign in using their University Register Number.</p>
+                    <div class="p-3 rounded-3 bg-dark bg-opacity-50 border border-secondary border-opacity-25 mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="small text-muted">Student User ID:</span>
+                            <code class="text-info font-monospace">TU6241103111...</code>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="small text-muted">Default Password:</span>
+                            <span class="small text-light font-monospace">Student@123</span>
+                        </div>
+                    </div>
+                    <a href="/login" class="btn btn-white-glass rounded-pill w-100 py-3 fw-bold">
+                        Proceed to Student Login &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Official University Footer -->
     <footer class="py-5 border-top border-secondary border-opacity-25" style="background: #030712;">
         <div class="container text-center">
@@ -822,6 +1144,9 @@ const server = http.createServer((req, res) => {
             </p>
         </div>
     </footer>
+
+    <!-- Bootstrap JS for Accordion -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>`);
     }

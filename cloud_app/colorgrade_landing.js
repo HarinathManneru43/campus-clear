@@ -543,3 +543,4 @@ code = code.replace(oldLandingRegex, vibrantLandingPage);
 
 fs.writeFileSync(serverJsPath, code, 'utf8');
 console.log("Successfully upgraded landing page with vibrant color grading and high contrast!");
+
