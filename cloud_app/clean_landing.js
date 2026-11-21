@@ -588,3 +588,4 @@ code = code.replace(oldLandingRegex, cleanLandingPage);
 
 fs.writeFileSync(serverJsPath, code, 'utf8');
 console.log("Successfully cleaned up landing page: removed timetable/leadership, kept white glassy button, and fixed all text visibility!");
+

@@ -253,7 +253,10 @@ const server = http.createServer((req, res) => {
     if (pathname.startsWith('/public/')) {
         const relPath = pathname.replace(/^\/public\//, '');
         const safePath = path.normalize(relPath).replace(/^(\.\.[\/\\])+/, '');
-        const filePath = path.join(__dirname, 'public', safePath);
+        let filePath = path.join(__dirname, 'public', safePath);
+        if (!fs.existsSync(filePath)) {
+            filePath = path.join(process.cwd(), 'public', safePath);
+        }
 
         if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
             const ext = path.extname(filePath).toLowerCase();
