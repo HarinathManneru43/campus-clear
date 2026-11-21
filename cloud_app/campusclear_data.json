@@ -1,4 +1,8 @@
 {
+  "college_name": "Takshashila University",
+  "department_name": "Artificial Intelligence & Data Science (AIDS)",
+  "hod": "Dr. M Senthil",
+  "semester": "V Semester",
   "departments": [
     {
       "id": 1,
@@ -23,9 +27,9 @@
     },
     {
       "id": 4,
-      "name": "Computer Science & Engineering",
-      "code": "CSE",
-      "description": "Academic department clearance, lab equipment, and faculty sign-offs.",
+      "name": "Artificial Intelligence & Data Science",
+      "code": "AIDS",
+      "description": "HOD: Dr. M Senthil - Academic department clearance, labs & Mini Project-II sign-offs.",
       "is_active": 1
     },
     {
@@ -36,78 +40,778 @@
       "is_active": 1
     }
   ],
+  "subjects": [
+    {
+      "code": "U24MAT501",
+      "name": "Numerical Method",
+      "short": "NM",
+      "faculty": "Dr. D. Senthil Kumar"
+    },
+    {
+      "code": "U24CEB501",
+      "name": "Computer Networks",
+      "short": "CN",
+      "faculty": "Mrs. Dhanusree"
+    },
+    {
+      "code": "U24CET502",
+      "name": "Theory of Computation",
+      "short": "TOC",
+      "faculty": "Dr. R. Vinodha"
+    },
+    {
+      "code": "U24ADB565",
+      "name": "Deep Learning",
+      "short": "DL",
+      "faculty": "IBM Staff-2"
+    },
+    {
+      "code": "U24ADT521",
+      "name": "Responsible AI",
+      "short": "RA",
+      "faculty": "Dr. M. Senthil"
+    },
+    {
+      "code": "U24BAT567",
+      "name": "Theory and Practise of Entrepreneurship",
+      "short": "TPE",
+      "faculty": "Ms. Lakshmi Priya"
+    },
+    {
+      "code": "GE-III",
+      "name": "Generic Elective-III",
+      "short": "GE-III",
+      "faculty": "Faculty Coordinator"
+    },
+    {
+      "code": "SEM",
+      "name": "Seminar",
+      "short": "SEM",
+      "faculty": "Mr. Sandip Mondal"
+    },
+    {
+      "code": "U24CSW501",
+      "name": "Mini Project-II",
+      "short": "MP-II",
+      "faculty": "Dr. M. Senthil"
+    },
+    {
+      "code": "LAB-CN",
+      "name": "Computer Networks Lab",
+      "short": "CN LAB",
+      "faculty": "Mrs. M. Subathra & Dr. R. Aruna Kirithika"
+    }
+  ],
+  "periodTimings": [
+    {
+      "period": "Period 1",
+      "time": "9:30 - 10:20"
+    },
+    {
+      "period": "Period 2",
+      "time": "10:20 - 11:10"
+    },
+    {
+      "period": "Interval",
+      "time": "11:10 - 11:20"
+    },
+    {
+      "period": "Period 3",
+      "time": "11:20 - 12:10"
+    },
+    {
+      "period": "Period 4",
+      "time": "12:10 - 1:00"
+    },
+    {
+      "period": "Lunch Break",
+      "time": "1:00 - 1:50"
+    },
+    {
+      "period": "Period 5",
+      "time": "1:50 - 2:30"
+    },
+    {
+      "period": "Period 6",
+      "time": "2:30 - 3:10"
+    },
+    {
+      "period": "Interval",
+      "time": "3:10 - 3:20"
+    },
+    {
+      "period": "Period 7",
+      "time": "3:20 - 4:00"
+    },
+    {
+      "period": "Period 8",
+      "time": "4:00 - 4:40"
+    }
+  ],
+  "timetable": {
+    "MONDAY": [
+      "RA",
+      "TPE",
+      "CN",
+      "TOC",
+      "CN LAB",
+      "CN LAB",
+      "NM",
+      "TOC"
+    ],
+    "TUESDAY": [
+      "NM",
+      "CN",
+      "TPE",
+      "TOC",
+      "RA",
+      "TOC",
+      "TPE",
+      "DL"
+    ],
+    "WEDNESDAY": [
+      "TOC",
+      "NM",
+      "DL",
+      "CN",
+      "TPE",
+      "RA",
+      "DL",
+      "TPE"
+    ],
+    "THURSDAY": [
+      "DL",
+      "MP-II",
+      "MP-II",
+      "MP-II",
+      "RA",
+      "NM",
+      "SEM",
+      "DL"
+    ],
+    "FRIDAY": [
+      "NM",
+      "RA",
+      "NM",
+      "TOC",
+      "DL",
+      "DL",
+      "CN",
+      "RA"
+    ]
+  },
   "users": [
     {
       "id": 1,
       "username": "admin",
-      "email": "admin@campusclear.edu",
+      "email": "admin@takshashilauniv.ac.in",
       "role": "admin",
       "status": "active",
-      "password_plain": "Admin@123"
+      "password_plain": "Admin@123",
+      "full_name": "Takshashila Admin Portal"
     },
     {
       "id": 2,
       "username": "staff_lib",
-      "email": "library@campusclear.edu",
+      "email": "library@takshashilauniv.ac.in",
       "role": "staff",
       "status": "active",
-      "password_plain": "Staff@123"
+      "password_plain": "Staff@123",
+      "full_name": "Dr. Arvind Rao (Central Library)"
     },
     {
       "id": 3,
       "username": "staff_acc",
-      "email": "accounts@campusclear.edu",
+      "email": "accounts@takshashilauniv.ac.in",
       "role": "staff",
       "status": "active",
-      "password_plain": "Staff@123"
+      "password_plain": "Staff@123",
+      "full_name": "Mrs. Sunita Verma (Accounts)"
     },
     {
       "id": 4,
       "username": "staff_hst",
-      "email": "hostel@campusclear.edu",
+      "email": "hostel@takshashilauniv.ac.in",
       "role": "staff",
       "status": "active",
-      "password_plain": "Staff@123"
+      "password_plain": "Staff@123",
+      "full_name": "Col. R. S. Rathore (Hostel Warden)"
     },
     {
       "id": 5,
-      "username": "staff_cse",
-      "email": "cse@campusclear.edu",
+      "username": "staff_aids",
+      "email": "senthil.m@takshashilauniv.ac.in",
       "role": "staff",
       "status": "active",
-      "password_plain": "Staff@123"
+      "password_plain": "Staff@123",
+      "full_name": "Dr. M Senthil (HOD AIDS)"
     },
     {
       "id": 6,
       "username": "staff_exm",
-      "email": "exam@campusclear.edu",
+      "email": "exam@takshashilauniv.ac.in",
       "role": "staff",
       "status": "active",
-      "password_plain": "Staff@123"
+      "password_plain": "Staff@123",
+      "full_name": "Dr. M. K. Sharma (Exam Cell)"
     },
     {
-      "id": 10,
+      "id": 100,
       "username": "TU6241103111002",
-      "email": "priya.patel@student.edu",
+      "email": "ajay.n@takshashilauniv.ac.in",
       "role": "student",
       "status": "active",
-      "password_plain": "Student@123"
+      "password_plain": "Student@123",
+      "full_name": "AJAY N"
     },
     {
-      "id": 11,
+      "id": 101,
       "username": "TU6241103111003",
-      "email": "rahul.sharma@student.edu",
+      "email": "akilan.r@takshashilauniv.ac.in",
       "role": "student",
       "status": "active",
-      "password_plain": "Student@123"
+      "password_plain": "Student@123",
+      "full_name": "AKILAN R"
     },
     {
-      "id": 12,
+      "id": 102,
       "username": "TU6241103111004",
-      "email": "ananya.iyer@student.edu",
+      "email": "akula.hemanth.kumar@takshashilauniv.ac.in",
       "role": "student",
       "status": "active",
-      "password_plain": "Student@123"
+      "password_plain": "Student@123",
+      "full_name": "AKULA HEMANTH KUMAR"
+    },
+    {
+      "id": 103,
+      "username": "TU6241103111005",
+      "email": "amul.vizhi.p@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "AMUL VIZHI P"
+    },
+    {
+      "id": 104,
+      "username": "TU6241103111006",
+      "email": "anandaraj.t@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "ANANDARAJ T"
+    },
+    {
+      "id": 105,
+      "username": "TU6241103111009",
+      "email": "arivuselvan.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "ARIVUSELVAN S"
+    },
+    {
+      "id": 106,
+      "username": "TU6241103111010",
+      "email": "aship.ali.a@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "ASHIP ALI A"
+    },
+    {
+      "id": 107,
+      "username": "TU6241103111017",
+      "email": "bandi.hemanth.kumar@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "BANDI HEMANTH KUMAR"
+    },
+    {
+      "id": 108,
+      "username": "TU6241103111020",
+      "email": "bezawada.anjana@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "BEZAWADA ANJANA"
+    },
+    {
+      "id": 109,
+      "username": "TU6241103111021",
+      "email": "bhavana.r@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "BHAVANA R"
+    },
+    {
+      "id": 110,
+      "username": "TU6241103111024",
+      "email": "bojarajan.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "BOJARAJAN S"
+    },
+    {
+      "id": 111,
+      "username": "TU6241103111026",
+      "email": "bommineni.mohan.krishna@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "BOMMINENI MOHAN KRISHNA"
+    },
+    {
+      "id": 112,
+      "username": "TU6241103111030",
+      "email": "c.thejavarshini@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "C THEJAVARSHINI"
+    },
+    {
+      "id": 113,
+      "username": "TU6241103111034",
+      "email": "desam.rithika.reddy@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "DESAM RITHIKA REDDY"
+    },
+    {
+      "id": 114,
+      "username": "TU6241103111035",
+      "email": "dhanalakshmi.k@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "DHANALAKSHMI K"
+    },
+    {
+      "id": 115,
+      "username": "TU6241103111038",
+      "email": "dhivya.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "DHIVYA S"
+    },
+    {
+      "id": 116,
+      "username": "TU6241103111040",
+      "email": "donthireddy.venkata.tejendra.reddy@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "DONTHIREDDY VENKATA TEJENDRA REDDY"
+    },
+    {
+      "id": 117,
+      "username": "TU6241103111042",
+      "email": "duvvuru.srujan.kumar.reddy@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "DUVVURU SRUJAN KUMAR REDDY"
+    },
+    {
+      "id": 118,
+      "username": "TU6241103111043",
+      "email": "elangovan.m@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "ELANGOVAN M"
+    },
+    {
+      "id": 119,
+      "username": "TU6241103111051",
+      "email": "gopika@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "GOPIKA"
+    },
+    {
+      "id": 120,
+      "username": "TU6241103111052",
+      "email": "gowda.anitha@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "GOWDA ANITHA"
+    },
+    {
+      "id": 121,
+      "username": "TU6241103111053",
+      "email": "gowtham.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "GOWTHAM S"
+    },
+    {
+      "id": 122,
+      "username": "TU6241103111057",
+      "email": "harirajan.k.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "HARIRAJAN K S"
+    },
+    {
+      "id": 123,
+      "username": "TU6241103111058",
+      "email": "hemanath.j@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "HEMANATH J"
+    },
+    {
+      "id": 124,
+      "username": "TU6241103111059",
+      "email": "iyyanar.r@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "IYYANAR R"
+    },
+    {
+      "id": 125,
+      "username": "TU6241103111060",
+      "email": "juvvalagunta.mourya.harsha.vardhan@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "JUVVALAGUNTA MOURYA HARSHA VARDHAN"
+    },
+    {
+      "id": 126,
+      "username": "TU6241103111061",
+      "email": "kalikiri.navanth.reddy@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "KALIKIRI NAVANTH REDDY"
+    },
+    {
+      "id": 127,
+      "username": "TU6241103111073",
+      "email": "konathalapalli.venkata.gnanateja@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "KONATHALAPALLI VENKATA GNANATEJA"
+    },
+    {
+      "id": 128,
+      "username": "TU6241103111078",
+      "email": "kummara.sivabanu@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "KUMMARA SIVABANU"
+    },
+    {
+      "id": 129,
+      "username": "TU6241103111085",
+      "email": "mamillapalli.ashrith.chowdary@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "MAMILLAPALLI ASHRITH CHOWDARY"
+    },
+    {
+      "id": 130,
+      "username": "TU6241103111086",
+      "email": "mandati.navaneeth@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "MANDATI NAVANEETH"
+    },
+    {
+      "id": 131,
+      "username": "TU6241103111088",
+      "email": "manneru.harinath@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "MANNERU HARINATH"
+    },
+    {
+      "id": 132,
+      "username": "TU6241103111093",
+      "email": "marzeena.r.g@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "MARZEENA R G"
+    },
+    {
+      "id": 133,
+      "username": "TU6241103111100",
+      "email": "mudi.kavya@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "MUDI KAVYA"
+    },
+    {
+      "id": 134,
+      "username": "TU6241103111101",
+      "email": "mukkella.raviteja@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "MUKKELLA RAVITEJA"
+    },
+    {
+      "id": 135,
+      "username": "TU6241103111103",
+      "email": "nakkani.venkata.sai.tarun@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "NAKKANI VENKATA SAI TARUN"
+    },
+    {
+      "id": 136,
+      "username": "TU6241103111105",
+      "email": "nirmal.kumar.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "NIRMAL KUMAR S"
+    },
+    {
+      "id": 137,
+      "username": "TU6241103111109",
+      "email": "p.usha.sree@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "P USHA SREE"
+    },
+    {
+      "id": 138,
+      "username": "TU6241103111116",
+      "email": "pawar.bavesh.kumar@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "PAWAR BAVESH KUMAR"
+    },
+    {
+      "id": 139,
+      "username": "TU6241103111119",
+      "email": "pitta.sai.sunandh.kumar@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "PITTA SAI SUNANDH KUMAR"
+    },
+    {
+      "id": 140,
+      "username": "TU6241103111123",
+      "email": "ragavi.v@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "RAGAVI V"
+    },
+    {
+      "id": 141,
+      "username": "TU6241103111124",
+      "email": "ragunathan.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "RAGUNATHAN S"
+    },
+    {
+      "id": 142,
+      "username": "TU6241103111126",
+      "email": "ranjan.n@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "RANJAN N"
+    },
+    {
+      "id": 143,
+      "username": "TU6241103111128",
+      "email": "ravella.venkata.naga.baji.pavan.kumar@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "RAVELLA VENKATA NAGA BAJI PAVAN KUMAR"
+    },
+    {
+      "id": 144,
+      "username": "TU6241103111134",
+      "email": "samraj.r@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SAMRAJ R"
+    },
+    {
+      "id": 145,
+      "username": "TU6241103111135",
+      "email": "santha.prakash.e@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SANTHA PRAKASH E"
+    },
+    {
+      "id": 146,
+      "username": "TU6241103111138",
+      "email": "sasmitha.sree.b@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SASMITHA SREE B"
+    },
+    {
+      "id": 147,
+      "username": "TU6241103111141",
+      "email": "shaik.khaleelbasha@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SHAIK KHALEELBASHA"
+    },
+    {
+      "id": 148,
+      "username": "TU6241103111146",
+      "email": "sivasankar.g@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SIVASANKAR G"
+    },
+    {
+      "id": 149,
+      "username": "TU6241103111149",
+      "email": "susindhar.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SUSINDHAR S"
+    },
+    {
+      "id": 150,
+      "username": "TU6241103111152",
+      "email": "thalasila.nandini@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "THALASILA NANDINI"
+    },
+    {
+      "id": 151,
+      "username": "TU6241103111154",
+      "email": "thilaga.p@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "THILAGA P"
+    },
+    {
+      "id": 152,
+      "username": "TU6241103111163",
+      "email": "vartha.saravana@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "VARTHA SARAVANA"
+    },
+    {
+      "id": 153,
+      "username": "TU6241103111166",
+      "email": "vemula.kulavardhan@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "VEMULA KULAVARDHAN"
+    },
+    {
+      "id": 154,
+      "username": "TU6241103111174",
+      "email": "anushka.s@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "ANUSHKA S"
+    },
+    {
+      "id": 155,
+      "username": "TU6241103111175",
+      "email": "chandraprasad.k@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "CHANDRAPRASAD K"
+    },
+    {
+      "id": 156,
+      "username": "TU6241103111176",
+      "email": "o.g.devaraj@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "O G DEVARAJ"
+    },
+    {
+      "id": 157,
+      "username": "TU6241103111179",
+      "email": "duggisetty.kamalesh@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "DUGGISETTY KAMALESH"
+    },
+    {
+      "id": 158,
+      "username": "TU6241103111181",
+      "email": "nellore.adithya@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "NELLORE ADITHYA"
+    },
+    {
+      "id": 159,
+      "username": "TU6241103111183",
+      "email": "sakthi.vishal.i@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SAKTHI VISHAL I"
+    },
+    {
+      "id": 160,
+      "username": "TU6241103111186",
+      "email": "chelloju.mokshagnya@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "CHELLOJU MOKSHAGNYA"
+    },
+    {
+      "id": 161,
+      "username": "TU6241103111190",
+      "email": "sreeram.b@takshashilauniv.ac.in",
+      "role": "student",
+      "status": "active",
+      "password_plain": "Student@123",
+      "full_name": "SREERAM B"
     }
   ],
   "staff": [
@@ -116,7 +820,7 @@
       "user_id": 2,
       "staff_code": "STF-LIB-01",
       "full_name": "Dr. Arvind Rao",
-      "email": "library@campusclear.edu",
+      "email": "library@takshashilauniv.ac.in",
       "phone": "9876543210",
       "department_id": 1,
       "designation": "Chief Librarian"
@@ -126,7 +830,7 @@
       "user_id": 3,
       "staff_code": "STF-ACC-01",
       "full_name": "Mrs. Sunita Verma",
-      "email": "accounts@campusclear.edu",
+      "email": "accounts@takshashilauniv.ac.in",
       "phone": "9876543211",
       "department_id": 2,
       "designation": "Senior Accounts Officer"
@@ -136,7 +840,7 @@
       "user_id": 4,
       "staff_code": "STF-HST-01",
       "full_name": "Col. R. S. Rathore",
-      "email": "hostel@campusclear.edu",
+      "email": "hostel@takshashilauniv.ac.in",
       "phone": "9876543212",
       "department_id": 3,
       "designation": "Chief Warden"
@@ -144,19 +848,19 @@
     {
       "id": 4,
       "user_id": 5,
-      "staff_code": "STF-CSE-01",
-      "full_name": "Prof. K. Swaminathan",
-      "email": "cse@campusclear.edu",
+      "staff_code": "STF-AIDS-01",
+      "full_name": "Dr. M Senthil",
+      "email": "senthil.m@takshashilauniv.ac.in",
       "phone": "9876543213",
       "department_id": 4,
-      "designation": "HOD Computer Science"
+      "designation": "HOD - AI & Data Science"
     },
     {
       "id": 5,
       "user_id": 6,
       "staff_code": "STF-EXM-01",
       "full_name": "Dr. M. K. Sharma",
-      "email": "exam@campusclear.edu",
+      "email": "exam@takshashilauniv.ac.in",
       "phone": "9876543214",
       "department_id": 5,
       "designation": "Controller of Examinations"
@@ -165,39 +869,747 @@
   "students": [
     {
       "id": 1,
-      "user_id": 10,
+      "user_id": 100,
       "roll_number": "TU6241103111002",
-      "full_name": "Priya Patel",
-      "email": "priya.patel@student.edu",
-      "phone": "9845012345",
+      "full_name": "AJAY N",
+      "email": "ajay.n@takshashilauniv.ac.in",
+      "phone": "9810000000",
       "department_id": 4,
       "batch": "2022-2026",
-      "semester": 6,
-      "cgpa": 8.85
+      "semester": 5,
+      "cgpa": "7.80"
     },
     {
       "id": 2,
-      "user_id": 11,
+      "user_id": 101,
       "roll_number": "TU6241103111003",
-      "full_name": "Rahul Sharma",
-      "email": "rahul.sharma@student.edu",
-      "phone": "9845012346",
+      "full_name": "AKILAN R",
+      "email": "akilan.r@takshashilauniv.ac.in",
+      "phone": "9810000001",
       "department_id": 4,
       "batch": "2022-2026",
-      "semester": 6,
-      "cgpa": 8.2
+      "semester": 5,
+      "cgpa": "8.80"
     },
     {
       "id": 3,
-      "user_id": 12,
+      "user_id": 102,
       "roll_number": "TU6241103111004",
-      "full_name": "Ananya Iyer",
-      "email": "ananya.iyer@student.edu",
-      "phone": "9845012347",
+      "full_name": "AKULA HEMANTH KUMAR",
+      "email": "akula.hemanth.kumar@takshashilauniv.ac.in",
+      "phone": "9810000002",
       "department_id": 4,
       "batch": "2022-2026",
-      "semester": 6,
-      "cgpa": 9.4
+      "semester": 5,
+      "cgpa": "9.80"
+    },
+    {
+      "id": 4,
+      "user_id": 103,
+      "roll_number": "TU6241103111005",
+      "full_name": "AMUL VIZHI P",
+      "email": "amul.vizhi.p@takshashilauniv.ac.in",
+      "phone": "9810000003",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.70"
+    },
+    {
+      "id": 5,
+      "user_id": 104,
+      "roll_number": "TU6241103111006",
+      "full_name": "ANANDARAJ T",
+      "email": "anandaraj.t@takshashilauniv.ac.in",
+      "phone": "9810000004",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.70"
+    },
+    {
+      "id": 6,
+      "user_id": 105,
+      "roll_number": "TU6241103111009",
+      "full_name": "ARIVUSELVAN S",
+      "email": "arivuselvan.s@takshashilauniv.ac.in",
+      "phone": "9810000005",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.60"
+    },
+    {
+      "id": 7,
+      "user_id": 106,
+      "roll_number": "TU6241103111010",
+      "full_name": "ASHIP ALI A",
+      "email": "aship.ali.a@takshashilauniv.ac.in",
+      "phone": "9810000006",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.60"
+    },
+    {
+      "id": 8,
+      "user_id": 107,
+      "roll_number": "TU6241103111017",
+      "full_name": "BANDI HEMANTH KUMAR",
+      "email": "bandi.hemanth.kumar@takshashilauniv.ac.in",
+      "phone": "9810000007",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.50"
+    },
+    {
+      "id": 9,
+      "user_id": 108,
+      "roll_number": "TU6241103111020",
+      "full_name": "BEZAWADA ANJANA",
+      "email": "bezawada.anjana@takshashilauniv.ac.in",
+      "phone": "9810000008",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.50"
+    },
+    {
+      "id": 10,
+      "user_id": 109,
+      "roll_number": "TU6241103111021",
+      "full_name": "BHAVANA R",
+      "email": "bhavana.r@takshashilauniv.ac.in",
+      "phone": "9810000009",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.40"
+    },
+    {
+      "id": 11,
+      "user_id": 110,
+      "roll_number": "TU6241103111024",
+      "full_name": "BOJARAJAN S",
+      "email": "bojarajan.s@takshashilauniv.ac.in",
+      "phone": "9810000010",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.40"
+    },
+    {
+      "id": 12,
+      "user_id": 111,
+      "roll_number": "TU6241103111026",
+      "full_name": "BOMMINENI MOHAN KRISHNA",
+      "email": "bommineni.mohan.krishna@takshashilauniv.ac.in",
+      "phone": "9810000011",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.30"
+    },
+    {
+      "id": 13,
+      "user_id": 112,
+      "roll_number": "TU6241103111030",
+      "full_name": "C THEJAVARSHINI",
+      "email": "c.thejavarshini@takshashilauniv.ac.in",
+      "phone": "9810000012",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.30"
+    },
+    {
+      "id": 14,
+      "user_id": 113,
+      "roll_number": "TU6241103111034",
+      "full_name": "DESAM RITHIKA REDDY",
+      "email": "desam.rithika.reddy@takshashilauniv.ac.in",
+      "phone": "9810000013",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.20"
+    },
+    {
+      "id": 15,
+      "user_id": 114,
+      "roll_number": "TU6241103111035",
+      "full_name": "DHANALAKSHMI K",
+      "email": "dhanalakshmi.k@takshashilauniv.ac.in",
+      "phone": "9810000014",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.20"
+    },
+    {
+      "id": 16,
+      "user_id": 115,
+      "roll_number": "TU6241103111038",
+      "full_name": "DHIVYA S",
+      "email": "dhivya.s@takshashilauniv.ac.in",
+      "phone": "9810000015",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.10"
+    },
+    {
+      "id": 17,
+      "user_id": 116,
+      "roll_number": "TU6241103111040",
+      "full_name": "DONTHIREDDY VENKATA TEJENDRA REDDY",
+      "email": "donthireddy.venkata.tejendra.reddy@takshashilauniv.ac.in",
+      "phone": "9810000016",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.10"
+    },
+    {
+      "id": 18,
+      "user_id": 117,
+      "roll_number": "TU6241103111042",
+      "full_name": "DUVVURU SRUJAN KUMAR REDDY",
+      "email": "duvvuru.srujan.kumar.reddy@takshashilauniv.ac.in",
+      "phone": "9810000017",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.00"
+    },
+    {
+      "id": 19,
+      "user_id": 118,
+      "roll_number": "TU6241103111043",
+      "full_name": "ELANGOVAN M",
+      "email": "elangovan.m@takshashilauniv.ac.in",
+      "phone": "9810000018",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.00"
+    },
+    {
+      "id": 20,
+      "user_id": 119,
+      "roll_number": "TU6241103111051",
+      "full_name": "GOPIKA",
+      "email": "gopika@takshashilauniv.ac.in",
+      "phone": "9810000019",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "7.90"
+    },
+    {
+      "id": 21,
+      "user_id": 120,
+      "roll_number": "TU6241103111052",
+      "full_name": "GOWDA ANITHA",
+      "email": "gowda.anitha@takshashilauniv.ac.in",
+      "phone": "9810000020",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.90"
+    },
+    {
+      "id": 22,
+      "user_id": 121,
+      "roll_number": "TU6241103111053",
+      "full_name": "GOWTHAM S",
+      "email": "gowtham.s@takshashilauniv.ac.in",
+      "phone": "9810000021",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "7.80"
+    },
+    {
+      "id": 23,
+      "user_id": 122,
+      "roll_number": "TU6241103111057",
+      "full_name": "HARIRAJAN K S",
+      "email": "harirajan.k.s@takshashilauniv.ac.in",
+      "phone": "9810000022",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.80"
+    },
+    {
+      "id": 24,
+      "user_id": 123,
+      "roll_number": "TU6241103111058",
+      "full_name": "HEMANATH J",
+      "email": "hemanath.j@takshashilauniv.ac.in",
+      "phone": "9810000023",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.80"
+    },
+    {
+      "id": 25,
+      "user_id": 124,
+      "roll_number": "TU6241103111059",
+      "full_name": "IYYANAR R",
+      "email": "iyyanar.r@takshashilauniv.ac.in",
+      "phone": "9810000024",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.70"
+    },
+    {
+      "id": 26,
+      "user_id": 125,
+      "roll_number": "TU6241103111060",
+      "full_name": "JUVVALAGUNTA MOURYA HARSHA VARDHAN",
+      "email": "juvvalagunta.mourya.harsha.vardhan@takshashilauniv.ac.in",
+      "phone": "9810000025",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.70"
+    },
+    {
+      "id": 27,
+      "user_id": 126,
+      "roll_number": "TU6241103111061",
+      "full_name": "KALIKIRI NAVANTH REDDY",
+      "email": "kalikiri.navanth.reddy@takshashilauniv.ac.in",
+      "phone": "9810000026",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.60"
+    },
+    {
+      "id": 28,
+      "user_id": 127,
+      "roll_number": "TU6241103111073",
+      "full_name": "KONATHALAPALLI VENKATA GNANATEJA",
+      "email": "konathalapalli.venkata.gnanateja@takshashilauniv.ac.in",
+      "phone": "9810000027",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.60"
+    },
+    {
+      "id": 29,
+      "user_id": 128,
+      "roll_number": "TU6241103111078",
+      "full_name": "KUMMARA SIVABANU",
+      "email": "kummara.sivabanu@takshashilauniv.ac.in",
+      "phone": "9810000028",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.50"
+    },
+    {
+      "id": 30,
+      "user_id": 129,
+      "roll_number": "TU6241103111085",
+      "full_name": "MAMILLAPALLI ASHRITH CHOWDARY",
+      "email": "mamillapalli.ashrith.chowdary@takshashilauniv.ac.in",
+      "phone": "9810000029",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.50"
+    },
+    {
+      "id": 31,
+      "user_id": 130,
+      "roll_number": "TU6241103111086",
+      "full_name": "MANDATI NAVANEETH",
+      "email": "mandati.navaneeth@takshashilauniv.ac.in",
+      "phone": "9810000030",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.40"
+    },
+    {
+      "id": 32,
+      "user_id": 131,
+      "roll_number": "TU6241103111088",
+      "full_name": "MANNERU HARINATH",
+      "email": "manneru.harinath@takshashilauniv.ac.in",
+      "phone": "9810000031",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.40"
+    },
+    {
+      "id": 33,
+      "user_id": 132,
+      "roll_number": "TU6241103111093",
+      "full_name": "MARZEENA R G",
+      "email": "marzeena.r.g@takshashilauniv.ac.in",
+      "phone": "9810000032",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.30"
+    },
+    {
+      "id": 34,
+      "user_id": 133,
+      "roll_number": "TU6241103111100",
+      "full_name": "MUDI KAVYA",
+      "email": "mudi.kavya@takshashilauniv.ac.in",
+      "phone": "9810000033",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.30"
+    },
+    {
+      "id": 35,
+      "user_id": 134,
+      "roll_number": "TU6241103111101",
+      "full_name": "MUKKELLA RAVITEJA",
+      "email": "mukkella.raviteja@takshashilauniv.ac.in",
+      "phone": "9810000034",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.20"
+    },
+    {
+      "id": 36,
+      "user_id": 135,
+      "roll_number": "TU6241103111103",
+      "full_name": "NAKKANI VENKATA SAI TARUN",
+      "email": "nakkani.venkata.sai.tarun@takshashilauniv.ac.in",
+      "phone": "9810000035",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.20"
+    },
+    {
+      "id": 37,
+      "user_id": 136,
+      "roll_number": "TU6241103111105",
+      "full_name": "NIRMAL KUMAR S",
+      "email": "nirmal.kumar.s@takshashilauniv.ac.in",
+      "phone": "9810000036",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.10"
+    },
+    {
+      "id": 38,
+      "user_id": 137,
+      "roll_number": "TU6241103111109",
+      "full_name": "P USHA SREE",
+      "email": "p.usha.sree@takshashilauniv.ac.in",
+      "phone": "9810000037",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.10"
+    },
+    {
+      "id": 39,
+      "user_id": 138,
+      "roll_number": "TU6241103111116",
+      "full_name": "PAWAR BAVESH KUMAR",
+      "email": "pawar.bavesh.kumar@takshashilauniv.ac.in",
+      "phone": "9810000038",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.00"
+    },
+    {
+      "id": 40,
+      "user_id": 139,
+      "roll_number": "TU6241103111119",
+      "full_name": "PITTA SAI SUNANDH KUMAR",
+      "email": "pitta.sai.sunandh.kumar@takshashilauniv.ac.in",
+      "phone": "9810000039",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.00"
+    },
+    {
+      "id": 41,
+      "user_id": 140,
+      "roll_number": "TU6241103111123",
+      "full_name": "RAGAVI V",
+      "email": "ragavi.v@takshashilauniv.ac.in",
+      "phone": "9810000040",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "7.90"
+    },
+    {
+      "id": 42,
+      "user_id": 141,
+      "roll_number": "TU6241103111124",
+      "full_name": "RAGUNATHAN S",
+      "email": "ragunathan.s@takshashilauniv.ac.in",
+      "phone": "9810000041",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.90"
+    },
+    {
+      "id": 43,
+      "user_id": 142,
+      "roll_number": "TU6241103111126",
+      "full_name": "RANJAN N",
+      "email": "ranjan.n@takshashilauniv.ac.in",
+      "phone": "9810000042",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "7.80"
+    },
+    {
+      "id": 44,
+      "user_id": 143,
+      "roll_number": "TU6241103111128",
+      "full_name": "RAVELLA VENKATA NAGA BAJI PAVAN KUMAR",
+      "email": "ravella.venkata.naga.baji.pavan.kumar@takshashilauniv.ac.in",
+      "phone": "9810000043",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.80"
+    },
+    {
+      "id": 45,
+      "user_id": 144,
+      "roll_number": "TU6241103111134",
+      "full_name": "SAMRAJ R",
+      "email": "samraj.r@takshashilauniv.ac.in",
+      "phone": "9810000044",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.80"
+    },
+    {
+      "id": 46,
+      "user_id": 145,
+      "roll_number": "TU6241103111135",
+      "full_name": "SANTHA PRAKASH E",
+      "email": "santha.prakash.e@takshashilauniv.ac.in",
+      "phone": "9810000045",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.70"
+    },
+    {
+      "id": 47,
+      "user_id": 146,
+      "roll_number": "TU6241103111138",
+      "full_name": "SASMITHA SREE B",
+      "email": "sasmitha.sree.b@takshashilauniv.ac.in",
+      "phone": "9810000046",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.70"
+    },
+    {
+      "id": 48,
+      "user_id": 147,
+      "roll_number": "TU6241103111141",
+      "full_name": "SHAIK KHALEELBASHA",
+      "email": "shaik.khaleelbasha@takshashilauniv.ac.in",
+      "phone": "9810000047",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.60"
+    },
+    {
+      "id": 49,
+      "user_id": 148,
+      "roll_number": "TU6241103111146",
+      "full_name": "SIVASANKAR G",
+      "email": "sivasankar.g@takshashilauniv.ac.in",
+      "phone": "9810000048",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.60"
+    },
+    {
+      "id": 50,
+      "user_id": 149,
+      "roll_number": "TU6241103111149",
+      "full_name": "SUSINDHAR S",
+      "email": "susindhar.s@takshashilauniv.ac.in",
+      "phone": "9810000049",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.50"
+    },
+    {
+      "id": 51,
+      "user_id": 150,
+      "roll_number": "TU6241103111152",
+      "full_name": "THALASILA NANDINI",
+      "email": "thalasila.nandini@takshashilauniv.ac.in",
+      "phone": "9810000050",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.50"
+    },
+    {
+      "id": 52,
+      "user_id": 151,
+      "roll_number": "TU6241103111154",
+      "full_name": "THILAGA P",
+      "email": "thilaga.p@takshashilauniv.ac.in",
+      "phone": "9810000051",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.40"
+    },
+    {
+      "id": 53,
+      "user_id": 152,
+      "roll_number": "TU6241103111163",
+      "full_name": "VARTHA SARAVANA",
+      "email": "vartha.saravana@takshashilauniv.ac.in",
+      "phone": "9810000052",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.40"
+    },
+    {
+      "id": 54,
+      "user_id": 153,
+      "roll_number": "TU6241103111166",
+      "full_name": "VEMULA KULAVARDHAN",
+      "email": "vemula.kulavardhan@takshashilauniv.ac.in",
+      "phone": "9810000053",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.30"
+    },
+    {
+      "id": 55,
+      "user_id": 154,
+      "roll_number": "TU6241103111174",
+      "full_name": "ANUSHKA S",
+      "email": "anushka.s@takshashilauniv.ac.in",
+      "phone": "9810000054",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.30"
+    },
+    {
+      "id": 56,
+      "user_id": 155,
+      "roll_number": "TU6241103111175",
+      "full_name": "CHANDRAPRASAD K",
+      "email": "chandraprasad.k@takshashilauniv.ac.in",
+      "phone": "9810000055",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.20"
+    },
+    {
+      "id": 57,
+      "user_id": 156,
+      "roll_number": "TU6241103111176",
+      "full_name": "O G DEVARAJ",
+      "email": "o.g.devaraj@takshashilauniv.ac.in",
+      "phone": "9810000056",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.20"
+    },
+    {
+      "id": 58,
+      "user_id": 157,
+      "roll_number": "TU6241103111179",
+      "full_name": "DUGGISETTY KAMALESH",
+      "email": "duggisetty.kamalesh@takshashilauniv.ac.in",
+      "phone": "9810000057",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.10"
+    },
+    {
+      "id": 59,
+      "user_id": 158,
+      "roll_number": "TU6241103111181",
+      "full_name": "NELLORE ADITHYA",
+      "email": "nellore.adithya@takshashilauniv.ac.in",
+      "phone": "9810000058",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.10"
+    },
+    {
+      "id": 60,
+      "user_id": 159,
+      "roll_number": "TU6241103111183",
+      "full_name": "SAKTHI VISHAL I",
+      "email": "sakthi.vishal.i@takshashilauniv.ac.in",
+      "phone": "9810000059",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "8.00"
+    },
+    {
+      "id": 61,
+      "user_id": 160,
+      "roll_number": "TU6241103111186",
+      "full_name": "CHELLOJU MOKSHAGNYA",
+      "email": "chelloju.mokshagnya@takshashilauniv.ac.in",
+      "phone": "9810000060",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "9.00"
+    },
+    {
+      "id": 62,
+      "user_id": 161,
+      "roll_number": "TU6241103111190",
+      "full_name": "SREERAM B",
+      "email": "sreeram.b@takshashilauniv.ac.in",
+      "phone": "9810000061",
+      "department_id": 4,
+      "batch": "2022-2026",
+      "semester": 5,
+      "cgpa": "7.90"
     }
   ],
   "clearance_status": [
@@ -206,80 +1618,2480 @@
       "student_id": 1,
       "department_id": 1,
       "status": "pending",
-      "remarks": "Overdue library book unreturned",
-      "updated_at": "2026-11-01 10:30:00"
+      "remarks": "Library: \"Computer Networks (Tanenbaum)\" 14 days overdue",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 2,
       "student_id": 1,
       "department_id": 2,
       "status": "cleared",
-      "remarks": "Semester fees fully paid",
-      "updated_at": "2026-11-01 11:00:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 3,
       "student_id": 1,
       "department_id": 3,
       "status": "cleared",
-      "remarks": "Hostel room inventory verified",
-      "updated_at": "2026-11-01 11:15:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 4,
       "student_id": 1,
       "department_id": 4,
       "status": "cleared",
-      "remarks": "All lab practicals completed",
-      "updated_at": "2026-11-01 11:20:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 5,
       "student_id": 1,
       "department_id": 5,
       "status": "cleared",
-      "remarks": "Exam clearance approved",
-      "updated_at": "2026-11-01 11:25:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 6,
-      "student_id": 3,
+      "student_id": 2,
       "department_id": 1,
       "status": "cleared",
-      "remarks": "No dues",
-      "updated_at": "2026-11-01 10:00:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 7,
-      "student_id": 3,
+      "student_id": 2,
       "department_id": 2,
       "status": "cleared",
-      "remarks": "Fees cleared",
-      "updated_at": "2026-11-01 10:00:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 8,
-      "student_id": 3,
+      "student_id": 2,
       "department_id": 3,
       "status": "cleared",
-      "remarks": "Room cleared",
-      "updated_at": "2026-11-01 10:00:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 9,
-      "student_id": 3,
+      "student_id": 2,
       "department_id": 4,
       "status": "cleared",
-      "remarks": "Academics cleared",
-      "updated_at": "2026-11-01 10:00:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     },
     {
       "id": 10,
+      "student_id": 2,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 11,
+      "student_id": 3,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 12,
+      "student_id": 3,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 13,
+      "student_id": 3,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 14,
+      "student_id": 3,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 15,
       "student_id": 3,
       "department_id": 5,
       "status": "cleared",
-      "remarks": "Exam cleared",
-      "updated_at": "2026-11-01 10:00:00"
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 16,
+      "student_id": 4,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 17,
+      "student_id": 4,
+      "department_id": 2,
+      "status": "pending",
+      "remarks": "Accounts: Lab Maintenance fee unpaid",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 18,
+      "student_id": 4,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 19,
+      "student_id": 4,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 20,
+      "student_id": 4,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 21,
+      "student_id": 5,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 22,
+      "student_id": 5,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 23,
+      "student_id": 5,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 24,
+      "student_id": 5,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 25,
+      "student_id": 5,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 26,
+      "student_id": 6,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 27,
+      "student_id": 6,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 28,
+      "student_id": 6,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 29,
+      "student_id": 6,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 30,
+      "student_id": 6,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 31,
+      "student_id": 7,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 32,
+      "student_id": 7,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 33,
+      "student_id": 7,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 34,
+      "student_id": 7,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 35,
+      "student_id": 7,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 36,
+      "student_id": 8,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 37,
+      "student_id": 8,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 38,
+      "student_id": 8,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 39,
+      "student_id": 8,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 40,
+      "student_id": 8,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 41,
+      "student_id": 9,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 42,
+      "student_id": 9,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 43,
+      "student_id": 9,
+      "department_id": 3,
+      "status": "pending",
+      "remarks": "Hostel: Mess dues pending reconciliation",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 44,
+      "student_id": 9,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 45,
+      "student_id": 9,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 46,
+      "student_id": 10,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 47,
+      "student_id": 10,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 48,
+      "student_id": 10,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 49,
+      "student_id": 10,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 50,
+      "student_id": 10,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 51,
+      "student_id": 11,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 52,
+      "student_id": 11,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 53,
+      "student_id": 11,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 54,
+      "student_id": 11,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 55,
+      "student_id": 11,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 56,
+      "student_id": 12,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 57,
+      "student_id": 12,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 58,
+      "student_id": 12,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 59,
+      "student_id": 12,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 60,
+      "student_id": 12,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 61,
+      "student_id": 13,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 62,
+      "student_id": 13,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 63,
+      "student_id": 13,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 64,
+      "student_id": 13,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 65,
+      "student_id": 13,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 66,
+      "student_id": 14,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 67,
+      "student_id": 14,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 68,
+      "student_id": 14,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 69,
+      "student_id": 14,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 70,
+      "student_id": 14,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 71,
+      "student_id": 15,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 72,
+      "student_id": 15,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 73,
+      "student_id": 15,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 74,
+      "student_id": 15,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 75,
+      "student_id": 15,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 76,
+      "student_id": 16,
+      "department_id": 1,
+      "status": "pending",
+      "remarks": "Library: Reference Journal return pending",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 77,
+      "student_id": 16,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 78,
+      "student_id": 16,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 79,
+      "student_id": 16,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 80,
+      "student_id": 16,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 81,
+      "student_id": 17,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 82,
+      "student_id": 17,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 83,
+      "student_id": 17,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 84,
+      "student_id": 17,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 85,
+      "student_id": 17,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 86,
+      "student_id": 18,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 87,
+      "student_id": 18,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 88,
+      "student_id": 18,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 89,
+      "student_id": 18,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 90,
+      "student_id": 18,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 91,
+      "student_id": 19,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 92,
+      "student_id": 19,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 93,
+      "student_id": 19,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 94,
+      "student_id": 19,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 95,
+      "student_id": 19,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 96,
+      "student_id": 20,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 97,
+      "student_id": 20,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 98,
+      "student_id": 20,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 99,
+      "student_id": 20,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 100,
+      "student_id": 20,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 101,
+      "student_id": 21,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 102,
+      "student_id": 21,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 103,
+      "student_id": 21,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 104,
+      "student_id": 21,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 105,
+      "student_id": 21,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 106,
+      "student_id": 22,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 107,
+      "student_id": 22,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 108,
+      "student_id": 22,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 109,
+      "student_id": 22,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 110,
+      "student_id": 22,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 111,
+      "student_id": 23,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 112,
+      "student_id": 23,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 113,
+      "student_id": 23,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 114,
+      "student_id": 23,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 115,
+      "student_id": 23,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 116,
+      "student_id": 24,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 117,
+      "student_id": 24,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 118,
+      "student_id": 24,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 119,
+      "student_id": 24,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 120,
+      "student_id": 24,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 121,
+      "student_id": 25,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 122,
+      "student_id": 25,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 123,
+      "student_id": 25,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 124,
+      "student_id": 25,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 125,
+      "student_id": 25,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 126,
+      "student_id": 26,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 127,
+      "student_id": 26,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 128,
+      "student_id": 26,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 129,
+      "student_id": 26,
+      "department_id": 4,
+      "status": "pending",
+      "remarks": "AIDS Dept: Mini Project-II phase 1 report sign-off required",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 130,
+      "student_id": 26,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 131,
+      "student_id": 27,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 132,
+      "student_id": 27,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 133,
+      "student_id": 27,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 134,
+      "student_id": 27,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 135,
+      "student_id": 27,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 136,
+      "student_id": 28,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 137,
+      "student_id": 28,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 138,
+      "student_id": 28,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 139,
+      "student_id": 28,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 140,
+      "student_id": 28,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 141,
+      "student_id": 29,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 142,
+      "student_id": 29,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 143,
+      "student_id": 29,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 144,
+      "student_id": 29,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 145,
+      "student_id": 29,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 146,
+      "student_id": 30,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 147,
+      "student_id": 30,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 148,
+      "student_id": 30,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 149,
+      "student_id": 30,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 150,
+      "student_id": 30,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 151,
+      "student_id": 31,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 152,
+      "student_id": 31,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 153,
+      "student_id": 31,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 154,
+      "student_id": 31,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 155,
+      "student_id": 31,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 156,
+      "student_id": 32,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 157,
+      "student_id": 32,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 158,
+      "student_id": 32,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 159,
+      "student_id": 32,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 160,
+      "student_id": 32,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 161,
+      "student_id": 33,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 162,
+      "student_id": 33,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 163,
+      "student_id": 33,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 164,
+      "student_id": 33,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 165,
+      "student_id": 33,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 166,
+      "student_id": 34,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 167,
+      "student_id": 34,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 168,
+      "student_id": 34,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 169,
+      "student_id": 34,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 170,
+      "student_id": 34,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 171,
+      "student_id": 35,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 172,
+      "student_id": 35,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 173,
+      "student_id": 35,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 174,
+      "student_id": 35,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 175,
+      "student_id": 35,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 176,
+      "student_id": 36,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 177,
+      "student_id": 36,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 178,
+      "student_id": 36,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 179,
+      "student_id": 36,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 180,
+      "student_id": 36,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 181,
+      "student_id": 37,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 182,
+      "student_id": 37,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 183,
+      "student_id": 37,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 184,
+      "student_id": 37,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 185,
+      "student_id": 37,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 186,
+      "student_id": 38,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 187,
+      "student_id": 38,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 188,
+      "student_id": 38,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 189,
+      "student_id": 38,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 190,
+      "student_id": 38,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 191,
+      "student_id": 39,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 192,
+      "student_id": 39,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 193,
+      "student_id": 39,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 194,
+      "student_id": 39,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 195,
+      "student_id": 39,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 196,
+      "student_id": 40,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 197,
+      "student_id": 40,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 198,
+      "student_id": 40,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 199,
+      "student_id": 40,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 200,
+      "student_id": 40,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 201,
+      "student_id": 41,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 202,
+      "student_id": 41,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 203,
+      "student_id": 41,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 204,
+      "student_id": 41,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 205,
+      "student_id": 41,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 206,
+      "student_id": 42,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 207,
+      "student_id": 42,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 208,
+      "student_id": 42,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 209,
+      "student_id": 42,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 210,
+      "student_id": 42,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 211,
+      "student_id": 43,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 212,
+      "student_id": 43,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 213,
+      "student_id": 43,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 214,
+      "student_id": 43,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 215,
+      "student_id": 43,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 216,
+      "student_id": 44,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 217,
+      "student_id": 44,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 218,
+      "student_id": 44,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 219,
+      "student_id": 44,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 220,
+      "student_id": 44,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 221,
+      "student_id": 45,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 222,
+      "student_id": 45,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 223,
+      "student_id": 45,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 224,
+      "student_id": 45,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 225,
+      "student_id": 45,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 226,
+      "student_id": 46,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 227,
+      "student_id": 46,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 228,
+      "student_id": 46,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 229,
+      "student_id": 46,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 230,
+      "student_id": 46,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 231,
+      "student_id": 47,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 232,
+      "student_id": 47,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 233,
+      "student_id": 47,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 234,
+      "student_id": 47,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 235,
+      "student_id": 47,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 236,
+      "student_id": 48,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 237,
+      "student_id": 48,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 238,
+      "student_id": 48,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 239,
+      "student_id": 48,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 240,
+      "student_id": 48,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 241,
+      "student_id": 49,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 242,
+      "student_id": 49,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 243,
+      "student_id": 49,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 244,
+      "student_id": 49,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 245,
+      "student_id": 49,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 246,
+      "student_id": 50,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 247,
+      "student_id": 50,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 248,
+      "student_id": 50,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 249,
+      "student_id": 50,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 250,
+      "student_id": 50,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 251,
+      "student_id": 51,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 252,
+      "student_id": 51,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 253,
+      "student_id": 51,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 254,
+      "student_id": 51,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 255,
+      "student_id": 51,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 256,
+      "student_id": 52,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 257,
+      "student_id": 52,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 258,
+      "student_id": 52,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 259,
+      "student_id": 52,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 260,
+      "student_id": 52,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 261,
+      "student_id": 53,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 262,
+      "student_id": 53,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 263,
+      "student_id": 53,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 264,
+      "student_id": 53,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 265,
+      "student_id": 53,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 266,
+      "student_id": 54,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 267,
+      "student_id": 54,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 268,
+      "student_id": 54,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 269,
+      "student_id": 54,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 270,
+      "student_id": 54,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 271,
+      "student_id": 55,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 272,
+      "student_id": 55,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 273,
+      "student_id": 55,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 274,
+      "student_id": 55,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 275,
+      "student_id": 55,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 276,
+      "student_id": 56,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 277,
+      "student_id": 56,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 278,
+      "student_id": 56,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 279,
+      "student_id": 56,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 280,
+      "student_id": 56,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 281,
+      "student_id": 57,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 282,
+      "student_id": 57,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 283,
+      "student_id": 57,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 284,
+      "student_id": 57,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 285,
+      "student_id": 57,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 286,
+      "student_id": 58,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 287,
+      "student_id": 58,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 288,
+      "student_id": 58,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 289,
+      "student_id": 58,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 290,
+      "student_id": 58,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 291,
+      "student_id": 59,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 292,
+      "student_id": 59,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 293,
+      "student_id": 59,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 294,
+      "student_id": 59,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 295,
+      "student_id": 59,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 296,
+      "student_id": 60,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 297,
+      "student_id": 60,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 298,
+      "student_id": 60,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 299,
+      "student_id": 60,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 300,
+      "student_id": 60,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 301,
+      "student_id": 61,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 302,
+      "student_id": 61,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 303,
+      "student_id": 61,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 304,
+      "student_id": 61,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 305,
+      "student_id": 61,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 306,
+      "student_id": 62,
+      "department_id": 1,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 307,
+      "student_id": 62,
+      "department_id": 2,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 308,
+      "student_id": 62,
+      "department_id": 3,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 309,
+      "student_id": 62,
+      "department_id": 4,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 310,
+      "student_id": 62,
+      "department_id": 5,
+      "status": "cleared",
+      "remarks": "All requirements verified & approved",
+      "updated_at": "2026-11-20 10:00:00"
     }
   ],
   "dues": [
@@ -287,21 +4099,41 @@
       "id": 1,
       "student_id": 1,
       "department_id": 1,
-      "title": "Overdue Book Fine: Operating Systems 10th Ed",
-      "description": "Book due on 15 Oct, returned 12 days late.",
-      "amount": 450,
+      "title": "Library Book Overdue Fine",
+      "description": "Book 'Computer Networks (Tanenbaum)' returned 14 days late.",
+      "amount": 280,
       "status": "pending",
-      "created_at": "2026-10-28 14:20:00"
+      "created_at": "2026-11-15 09:30:00"
     },
     {
       "id": 2,
-      "student_id": 2,
+      "student_id": 4,
       "department_id": 2,
-      "title": "Lab Component Fee Semester 6",
-      "description": "Cloud computing lab fee balance.",
-      "amount": 1200,
+      "title": "Semester V Lab Maintenance Fee",
+      "description": "Cloud and Deep Learning Lab equipment fee balance.",
+      "amount": 750,
       "status": "pending",
-      "created_at": "2026-10-29 09:15:00"
+      "created_at": "2026-11-16 11:20:00"
+    },
+    {
+      "id": 3,
+      "student_id": 9,
+      "department_id": 3,
+      "title": "Hostel Mess Maintenance Balance",
+      "description": "Room 304 mess utility maintenance.",
+      "amount": 400,
+      "status": "pending",
+      "created_at": "2026-11-17 14:15:00"
+    },
+    {
+      "id": 4,
+      "student_id": 16,
+      "department_id": 1,
+      "title": "Reference Journal Retention Surcharge",
+      "description": "IEEE Transactions journal overdue fine.",
+      "amount": 150,
+      "status": "pending",
+      "created_at": "2026-11-18 10:00:00"
     }
   ],
   "disputes": [
@@ -310,11 +4142,11 @@
       "student_id": 1,
       "due_id": 1,
       "department_id": 1,
-      "subject": "Dispute regarding book return date",
-      "description": "Book was deposited in the drop-box on 20th Oct during library maintenance.",
+      "subject": "Contesting overdue calculation",
+      "description": "Book was placed in the central drop-box during weekend holiday.",
       "status": "open",
       "resolution_remarks": "",
-      "created_at": "2026-10-29 11:00:00"
+      "created_at": "2026-11-18 11:30:00"
     }
   ],
   "service_categories": [
@@ -357,25 +4189,36 @@
   "service_requests": [
     {
       "id": 1,
-      "request_number": "REQ-2026-8921B",
-      "student_id": 3,
-      "service_id": 1,
-      "purpose": "Higher studies application to Georgia Tech",
+      "request_number": "REQ-TU-2026-8801",
+      "student_id": 32,
+      "service_id": 2,
+      "purpose": "End-Semester Examinations V Semester Hall Ticket",
       "status": "approved",
       "clearance_snapshot": "cleared",
-      "qr_token": "CERT-ANANYA-IYER-2026",
-      "created_at": "2026-11-02 09:30:00"
+      "qr_token": "CERT-TU6241103111088-CLEAR",
+      "created_at": "2026-11-20 10:15:00"
     },
     {
       "id": 2,
-      "request_number": "REQ-2026-4410A",
+      "request_number": "REQ-TU-2026-8802",
+      "student_id": 32,
+      "service_id": 1,
+      "purpose": "Internship & Project Verification Document",
+      "status": "approved",
+      "clearance_snapshot": "cleared",
+      "qr_token": "CERT-TU6241103111088-BONAFIDE",
+      "created_at": "2026-11-20 11:45:00"
+    },
+    {
+      "id": 3,
+      "request_number": "REQ-TU-2026-8803",
       "student_id": 1,
-      "service_id": 3,
-      "purpose": "Lost card in central cafeteria",
+      "service_id": 1,
+      "purpose": "Scholarship verification",
       "status": "in_progress",
       "clearance_snapshot": "pending",
-      "qr_token": "REQ-TOKEN-PRIYA-CARD",
-      "created_at": "2026-11-03 14:10:00"
+      "qr_token": "REQ-TU6241103111002-PENDING",
+      "created_at": "2026-11-21 09:00:00"
     }
   ],
   "audit_logs": [
@@ -383,9 +4226,25 @@
       "id": 1,
       "user_id": 1,
       "action": "SYSTEM_INITIALIZATION",
-      "entity_type": "DATABASE",
-      "details": "CampusClear Cloud Engine Initialized",
-      "created_at": "2026-11-04 12:00:00"
+      "entity_type": "SYSTEM",
+      "details": "Takshashila University AIDS Dept V Semester Platform Initialized",
+      "created_at": "2026-11-21 14:00:00"
+    },
+    {
+      "id": 2,
+      "user_id": 5,
+      "action": "STAFF_REGISTRATION",
+      "entity_type": "STAFF",
+      "details": "Dr. M Senthil registered as HOD AIDS and Mini Project-II Lead",
+      "created_at": "2026-11-21 14:05:00"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "action": "BATCH_ENROLLMENT",
+      "entity_type": "STUDENTS",
+      "details": "Imported 62 students for Batch 2022-2026 V Semester AIDS",
+      "created_at": "2026-11-21 14:10:00"
     }
   ]
 }
