@@ -87,3 +87,4 @@ data.audit_logs.unshift({
 
 fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
 console.log("Successfully updated database!");
+
