@@ -106,7 +106,7 @@ function saveDb() {
 loadDb();
 
 // ==========================================
-// 2. CONTINUOUS CLEARANCE CALCULATION ENGINE
+// 2. CONTINUOUS CLEARANCE ENGINE
 // ==========================================
 function getStudentClearanceSummary(studentId) {
     const data = loadDb();
@@ -120,18 +120,15 @@ function getStudentClearanceSummary(studentId) {
     let pendingCount = 0;
 
     for (const dept of activeDepts) {
-        // Find explicit clearance status
         const statusRecord = data.clearance_status.find(cs => cs.student_id === studentId && cs.department_id === dept.id);
         const explicitStatus = statusRecord ? statusRecord.status : 'cleared';
         const remarks = statusRecord ? statusRecord.remarks : 'No pending issues';
         const lastUpdated = statusRecord ? statusRecord.updated_at : null;
 
-        // Find pending dues for this student in this dept
         const studentDues = data.dues.filter(du => du.student_id === studentId && du.department_id === dept.id && du.status === 'pending');
         const pendingDuesCount = studentDues.length;
         const totalDueAmount = studentDues.reduce((sum, d) => sum + Number(d.amount), 0);
 
-        // Effective status logic:
         let effectiveStatus = 'cleared';
         if (pendingDuesCount > 0 || ['pending', 'blocked'].includes(explicitStatus)) {
             effectiveStatus = 'pending';
@@ -300,8 +297,8 @@ function renderLayout(title, user, content, currentPath = '') {
     <div class="flex-grow-1 d-flex flex-column min-vh-100">
         <nav class="top-navbar d-flex justify-content-between align-items-center sticky-top">
             <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">Cloud Live Deployment</span>
-                <span class="text-secondary small d-none d-sm-inline">Zero XAMPP | Zero Config</span>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">Cloud Live Edition</span>
+                <span class="text-secondary small d-none d-sm-inline">Zero XAMPP • Fast Cloud Server</span>
             </div>
             <div class="d-flex align-items-center gap-3">
                 <a href="/verify" class="btn btn-sm btn-outline-primary rounded-pill"><i class="bi bi-qr-code-scan me-1"></i> QR Verify</a>
@@ -313,7 +310,7 @@ function renderLayout(title, user, content, currentPath = '') {
                         <span class="d-block fw-bold small text-dark lh-1">${user.full_name || user.username}</span>
                         <small class="text-muted text-uppercase" style="font-size:0.7rem;">${user.role}</small>
                     </div>
-                    <a href="/logout" class="btn btn-sm btn-light border rounded-pill ms-2"><i class="bi bi-box-arrow-right"></i></a>
+                    <a href="/logout" class="btn btn-sm btn-light border rounded-pill ms-2" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
                 </div>
             </div>
         </nav>
@@ -321,7 +318,7 @@ function renderLayout(title, user, content, currentPath = '') {
             ${content}
         </div>
         <footer class="p-3 bg-white border-top text-center text-muted small">
-            &copy; ${new Date().getFullYear()} CampusClear Cloud - Digital Clearance Platform | Ready for 24/7 Cloud Hosting
+            &copy; ${new Date().getFullYear()} CampusClear Cloud - Digital Clearance & Service Platform | 24/7 Web Accessible
         </footer>
     </div>
 </div>
@@ -349,23 +346,15 @@ const server = http.createServer((req, res) => {
         }
     }
 
-    // Helper: Parse POST Body
     function getBody(callback) {
         let body = '';
         req.on('data', chunk => body += chunk);
         req.on('end', () => callback(querystring.parse(body)));
     }
 
-    // Helper: Redirect
     function redirect(url) {
         res.writeHead(302, { 'Location': url });
         res.end();
-    }
-
-    // Helper: JSON
-    function sendJson(data, status = 200) {
-        res.writeHead(status, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(data));
     }
 
     const user = getSessionUser(req);
@@ -408,10 +397,10 @@ const server = http.createServer((req, res) => {
 
     <div class="hero-banner text-center">
         <div class="container">
-            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-3 fw-bold">Cloud Web Edition • No XAMPP Required</span>
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-3 fw-bold">Live Cloud Edition • No XAMPP Required</span>
             <h1 class="display-4 fw-extrabold text-white mb-3">Continuous Digital Student Clearance System</h1>
             <p class="lead text-secondary mx-auto mb-4" style="max-width: 650px;">
-                Replace manual physical No-Due signatures with automated real-time departmental clearance tracking across Library, Finance, Hostel, and Academics.
+                Automated continuous departmental clearance tracking across Library, Finance, Hostel, and Academic Departments with instant QR code validation.
             </p>
             <div class="d-flex justify-content-center gap-3">
                 <a href="/login" class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow-lg">Access Portal <i class="bi bi-arrow-right ms-2"></i></a>
@@ -427,7 +416,7 @@ const server = http.createServer((req, res) => {
                     <div class="bg-primary p-3 rounded-circle d-inline-block mb-3 text-white"><i class="bi bi-mortarboard fs-3"></i></div>
                     <h4 class="fw-bold text-white">Student Dashboard</h4>
                     <p class="text-secondary small">Continuous clearance meter, transparent pending dues settlement, in-portal dispute resolution, and printable QR certificates.</p>
-                    <a href="/login?role=student" class="btn btn-sm btn-outline-primary rounded-pill">Student Demo &rarr;</a>
+                    <a href="/login" class="btn btn-sm btn-outline-primary rounded-pill">Student Demo &rarr;</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -435,7 +424,7 @@ const server = http.createServer((req, res) => {
                     <div class="bg-info p-3 rounded-circle d-inline-block mb-3 text-white"><i class="bi bi-people fs-3"></i></div>
                     <h4 class="fw-bold text-white">Department Staff Portal</h4>
                     <p class="text-secondary small">Dedicated consoles for Central Library, Student Accounts, Hostel, Academics, and Exam Cell to issue fines and toggle clearance.</p>
-                    <a href="/login?role=staff" class="btn btn-sm btn-outline-info rounded-pill">Staff Demo &rarr;</a>
+                    <a href="/login" class="btn btn-sm btn-outline-info rounded-pill">Staff Demo &rarr;</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -443,7 +432,7 @@ const server = http.createServer((req, res) => {
                     <div class="bg-warning p-3 rounded-circle d-inline-block mb-3 text-dark"><i class="bi bi-shield-lock fs-3"></i></div>
                     <h4 class="fw-bold text-white">Admin Control Center</h4>
                     <p class="text-secondary small">Institutional analytics, department catalogs, student directory, emergency override protocols, and immutable audit trails.</p>
-                    <a href="/login?role=admin" class="btn btn-sm btn-outline-warning rounded-pill">Admin Demo &rarr;</a>
+                    <a href="/login" class="btn btn-sm btn-outline-warning rounded-pill">Admin Demo &rarr;</a>
                 </div>
             </div>
         </div>
@@ -503,7 +492,7 @@ const server = http.createServer((req, res) => {
                 }
 
                 res.writeHead(200, { 'Content-Type': 'text/html' });
-                return res.end(renderLoginPage('Invalid username or password. Please use the quick demo fill buttons.'));
+                return res.end(renderLoginPage('Invalid username or password. Please click one of the quick autofill buttons below.'));
             });
         }
 
@@ -597,7 +586,6 @@ function fill(u, p) {
         let verificationResult = null;
 
         if (tokenQuery) {
-            // Find by request QR token
             const matchedReq = data.service_requests.find(r => r.qr_token === tokenQuery);
             if (matchedReq) {
                 const st = data.students.find(s => s.id === matchedReq.student_id);
@@ -615,7 +603,6 @@ function fill(u, p) {
                     is_cleared: summary.is_cleared
                 };
             } else {
-                // Find by student roll number directly
                 const st = data.students.find(s => s.roll_number.toLowerCase() === tokenQuery.toLowerCase() || `CERT-${s.roll_number}`.toLowerCase() === tokenQuery.toLowerCase());
                 if (st) {
                     const dept = data.departments.find(d => d.id === st.department_id);
@@ -707,8 +694,6 @@ function fill(u, p) {
     if (pathname === '/student/dashboard') {
         const studentId = user.student_id || 1;
         const summary = getStudentClearanceSummary(studentId);
-        const data = loadDb();
-        const studentDues = data.dues.filter(d => d.student_id === studentId);
 
         const content = `
             <div class="row mb-4 align-items-center">
@@ -875,7 +860,7 @@ function fill(u, p) {
                             </div>
                             <div class="mb-3">
                                 <label class="form-label small fw-bold">Detailed Justification</label>
-                                <textarea class="form-control" name="description" rows="3" required placeholder="Provide transaction number, drop box receipt, etc."></textarea>
+                                <textarea class="form-control" name="description" rows="3" required placeholder="Provide transaction details, return date, etc."></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -896,7 +881,132 @@ function fill(u, p) {
         return res.end(renderLayout("My Dues & Disputes", user, content, pathname));
     }
 
-    // 5.3 DIGITAL CERTIFICATE VIEW
+    // 5.3 STUDENT SERVICE REQUESTS
+    if (pathname === '/student/services') {
+        const studentId = user.student_id || 1;
+        const data = loadDb();
+        const summary = getStudentClearanceSummary(studentId);
+
+        if (method === 'POST') {
+            return getBody(params => {
+                const srvId = Number(params.service_id);
+                const srv = data.service_categories.find(s => s.id === srvId);
+                const purpose = (params.purpose || '').trim();
+
+                if (srv && purpose) {
+                    if (srv.requires_full_clearance && !summary.is_cleared) {
+                        // Blocked by clearance rule
+                        return redirect('/student/services?error=blocked');
+                    }
+                    const reqId = data.service_requests.length > 0 ? Math.max(...data.service_requests.map(r => r.id)) + 1 : 1;
+                    const reqNum = `REQ-2026-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+                    const qrToken = `TOKEN-${reqNum}`;
+
+                    data.service_requests.unshift({
+                        id: reqId,
+                        request_number: reqNum,
+                        student_id: studentId,
+                        service_id: srvId,
+                        purpose,
+                        status: 'in_progress',
+                        clearance_snapshot: summary.is_cleared ? 'cleared' : 'pending',
+                        qr_token: qrToken,
+                        created_at: new Date().toISOString().replace('T', ' ').substring(0, 19)
+                    });
+                    saveDb();
+                    logAudit(user.id, 'SUBMIT_SERVICE_REQUEST', 'SERVICE_REQUEST', `Submitted request ${reqNum} for ${srv.name}`);
+                }
+                return redirect('/student/services?success=1');
+            });
+        }
+
+        const myRequests = data.service_requests.filter(r => r.student_id === studentId);
+        const errorParam = parsedUrl.searchParams.get('error');
+        const successParam = parsedUrl.searchParams.get('success');
+
+        const content = `
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-file-earmark-text me-2 text-primary"></i> College Service Requests</h2>
+                    <p class="text-muted mb-0">Apply for Bonafide Certificates, Exam Clearance, ID Card Replacement, and Transcripts.</p>
+                </div>
+                <button class="btn btn-primary rounded-pill px-4 fw-bold" data-bs-toggle="modal" data-bs-target="#newRequestModal">
+                    <i class="bi bi-plus-lg me-1"></i> Apply for Service
+                </button>
+            </div>
+
+            ${errorParam === 'blocked' ? `
+                <div class="alert alert-danger alert-dismissible fade show mb-4 rounded-4" role="alert">
+                    <i class="bi bi-exclamation-octagon-fill me-2"></i> <strong>Application Blocked:</strong> This service requires 100% full departmental clearance. You have pending clearance in ${summary.pending_count} department(s).
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            ` : successParam === '1' ? `
+                <div class="alert alert-success alert-dismissible fade show mb-4 rounded-4" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i> Service application submitted successfully! Department staff will review your request.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            ` : ''}
+
+            <!-- Application History Table -->
+            <div class="card card-glass p-0 border-0 overflow-hidden mb-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr><th>Request No</th><th>Service</th><th>Purpose</th><th>Clearance State</th><th>Approval Status</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            ${myRequests.length === 0 ? '<tr><td colspan="6" class="text-center py-4 text-muted">No service applications submitted yet.</td></tr>' : myRequests.map(r => {
+                                const srv = data.service_categories.find(s => s.id === r.service_id);
+                                return `<tr>
+                                    <td><code>${r.request_number}</code></td>
+                                    <td><strong class="text-dark">${srv ? srv.name : 'College Service'}</strong></td>
+                                    <td class="small text-muted">${r.purpose}</td>
+                                    <td><span class="badge ${r.clearance_snapshot === 'cleared' ? 'bg-success-subtle text-success' : 'bg-warning-subtle text-warning'}">${r.clearance_snapshot.toUpperCase()}</span></td>
+                                    <td>${renderBadge(r.status)}</td>
+                                    <td>
+                                        ${r.status === 'approved' ? `
+                                            <a href="/student/certificate" class="btn btn-sm btn-success rounded-pill px-3"><i class="bi bi-award me-1"></i> Certificate</a>
+                                        ` : '<span class="text-muted small">In Review</span>'}
+                                    </td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Modal: Apply Service -->
+            <div class="modal fade" id="newRequestModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <form method="POST" action="/student/services" class="modal-content rounded-4 border-0">
+                        <div class="modal-header border-bottom">
+                            <h5 class="modal-title fw-bold">Apply for College Service</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small">Service Category <span class="text-danger">*</span></label>
+                                <select class="form-select" name="service_id" required>
+                                    ${data.service_categories.map(s => `<option value="${s.id}">${s.name} ${s.requires_full_clearance ? '(Requires Full Clearance)' : '(Open Access)'}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small">Purpose / Statement of Need <span class="text-danger">*</span></label>
+                                <textarea class="form-control" name="purpose" rows="3" required placeholder="State why you require this document or service..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("Service Requests", user, content, pathname));
+    }
+
+    // 5.4 DIGITAL CERTIFICATE VIEW
     if (pathname === '/student/certificate') {
         const studentId = user.student_id || 1;
         const summary = getStudentClearanceSummary(studentId);
@@ -1011,8 +1121,223 @@ function fill(u, p) {
         return res.end(renderLayout("Digital Certificate", user, content, pathname));
     }
 
-    // 5.4 STAFF & ADMIN DASHBOARDS
-    if (pathname === '/staff/dashboard' || pathname === '/admin/dashboard') {
+    // 5.5 STAFF STUDENTS & CLEARANCE TOGGLE
+    if (pathname === '/staff/students') {
+        const data = loadDb();
+        const staffDeptId = user.department_id || 1;
+
+        if (method === 'POST') {
+            return getBody(params => {
+                const action = params.action;
+                if (action === 'toggle_status') {
+                    const stId = Number(params.student_id);
+                    const newStatus = params.status || 'cleared';
+                    const remarks = (params.remarks || '').trim() || (newStatus === 'cleared' ? 'Cleared by staff' : 'Hold applied');
+
+                    let rec = data.clearance_status.find(cs => cs.student_id === stId && cs.department_id === staffDeptId);
+                    if (rec) {
+                        rec.status = newStatus;
+                        rec.remarks = remarks;
+                        rec.updated_at = new Date().toISOString().replace('T', ' ').substring(0, 19);
+                    } else {
+                        const newId = data.clearance_status.length > 0 ? Math.max(...data.clearance_status.map(c => c.id)) + 1 : 1;
+                        data.clearance_status.push({
+                            id: newId,
+                            student_id: stId,
+                            department_id: staffDeptId,
+                            status: newStatus,
+                            remarks: remarks,
+                            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 19)
+                        });
+                    }
+                    saveDb();
+                    logAudit(user.id, 'UPDATE_CLEARANCE_STATUS', 'STUDENT', `Changed student ID ${stId} status to ${newStatus}`);
+                } else if (action === 'issue_due') {
+                    const stId = Number(params.student_id);
+                    const title = (params.title || '').trim();
+                    const amount = Number(params.amount) || 0;
+                    if (stId && title) {
+                        const dueId = data.dues.length > 0 ? Math.max(...data.dues.map(d => d.id)) + 1 : 1;
+                        data.dues.push({
+                            id: dueId,
+                            student_id: stId,
+                            department_id: staffDeptId,
+                            title: title,
+                            description: (params.description || '').trim(),
+                            amount: amount,
+                            status: 'pending',
+                            created_at: new Date().toISOString().replace('T', ' ').substring(0, 19)
+                        });
+                        saveDb();
+                        logAudit(user.id, 'ISSUE_DUE', 'DUE', `Issued due ID ${dueId} of ₹${amount} to student ${stId}`);
+                    }
+                }
+                return redirect('/staff/students');
+            });
+        }
+
+        const dept = data.departments.find(d => d.id === staffDeptId);
+        const content = `
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-people me-2 text-primary"></i> Assigned Students Roster</h2>
+                    <p class="text-muted mb-0">Department: <strong>${dept ? dept.name : 'All Departments'}</strong></p>
+                </div>
+            </div>
+
+            <div class="card card-glass border-0 overflow-hidden mb-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr><th>Roll Number</th><th>Student Name</th><th>Current Dept Status</th><th>Pending Dues</th><th>Toggle Clearance</th><th>Issue Penalty</th></tr>
+                        </thead>
+                        <tbody>
+                            ${data.students.map(st => {
+                                const cs = data.clearance_status.find(c => c.student_id === st.id && c.department_id === staffDeptId);
+                                const currStatus = cs ? cs.status : 'cleared';
+                                const dues = data.dues.filter(d => d.student_id === st.id && d.department_id === staffDeptId && d.status === 'pending');
+                                const totalDue = dues.reduce((s, d) => s + Number(d.amount), 0);
+
+                                return `<tr>
+                                    <td><code>${st.roll_number}</code></td>
+                                    <td><strong class="text-dark">${st.full_name}</strong><br><small class="text-muted">Batch: ${st.batch}</small></td>
+                                    <td>${renderBadge(currStatus)}</td>
+                                    <td>${dues.length > 0 ? `<span class="badge bg-danger">₹${totalDue.toFixed(2)} (${dues.length})</span>` : '<span class="text-success small fw-bold">₹0.00</span>'}</td>
+                                    <td>
+                                        <form method="POST" action="/staff/students" class="d-flex gap-2">
+                                            <input type="hidden" name="action" value="toggle_status">
+                                            <input type="hidden" name="student_id" value="${st.id}">
+                                            <select name="status" class="form-select form-select-sm w-auto">
+                                                <option value="cleared" ${currStatus === 'cleared' ? 'selected' : ''}>CLEARED</option>
+                                                <option value="pending" ${currStatus === 'pending' ? 'selected' : ''}>PENDING</option>
+                                                <option value="blocked" ${currStatus === 'blocked' ? 'selected' : ''}>BLOCKED</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-sm btn-primary rounded-pill px-3">Update</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-danger rounded-pill" onclick="openIssueDue(${st.id}, '${st.full_name.replace(/'/g, "\\'")}')">
+                                            <i class="bi bi-plus-circle me-1"></i> Issue Due
+                                        </button>
+                                    </td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Issue Due Modal -->
+            <div class="modal fade" id="issueDueModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <form method="POST" action="/staff/students" class="modal-content rounded-4 border-0">
+                        <input type="hidden" name="action" value="issue_due">
+                        <input type="hidden" name="student_id" id="dueStudentId">
+                        <div class="modal-header border-bottom">
+                            <h5 class="modal-title fw-bold">Issue Department Fine / Penalty</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Target Student</label>
+                                <input type="text" class="form-control" id="dueStudentName" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Due Title <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="title" placeholder="e.g. Broken glassware fee / Late lab fee" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Amount (₹) <span class="text-danger">*</span></label>
+                                <input type="number" step="0.01" class="form-control" name="amount" placeholder="e.g. 500.00" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Description</label>
+                                <textarea class="form-control" name="description" rows="2" placeholder="Details or incident reference..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger rounded-pill px-4 fw-bold">Issue Due</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+            function openIssueDue(id, name) {
+                document.getElementById('dueStudentId').value = id;
+                document.getElementById('dueStudentName').value = name;
+                new bootstrap.Modal(document.getElementById('issueDueModal')).show();
+            }
+            </script>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("Assigned Students", user, content, pathname));
+    }
+
+    // 5.6 STAFF SERVICE APPROVALS
+    if (pathname === '/staff/approvals') {
+        const data = loadDb();
+
+        if (method === 'POST') {
+            return getBody(params => {
+                const reqId = Number(params.request_id);
+                const action = params.action; // 'approve' or 'reject'
+                const reqRecord = data.service_requests.find(r => r.id === reqId);
+                if (reqRecord) {
+                    reqRecord.status = action === 'approve' ? 'approved' : 'rejected';
+                    saveDb();
+                    logAudit(user.id, 'SERVICE_REQUEST_ACTION', 'SERVICE_REQUEST', `Marked request ${reqRecord.request_number} as ${reqRecord.status}`);
+                }
+                return redirect('/staff/approvals');
+            });
+        }
+
+        const requests = data.service_requests;
+        const content = `
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-card-checklist me-2 text-primary"></i> Service Request Approvals</h2>
+                    <p class="text-muted mb-0">Review student applications requiring departmental clearance verification.</p>
+                </div>
+            </div>
+
+            <div class="card card-glass border-0 overflow-hidden mb-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr><th>Request No</th><th>Student</th><th>Service</th><th>Purpose</th><th>Status</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            ${requests.length === 0 ? '<tr><td colspan="6" class="text-center py-4 text-muted">No pending service applications.</td></tr>' : requests.map(r => {
+                                const st = data.students.find(s => s.id === r.student_id);
+                                const srv = data.service_categories.find(s => s.id === r.service_id);
+                                return `<tr>
+                                    <td><code>${r.request_number}</code></td>
+                                    <td><strong class="text-dark">${st ? st.full_name : 'Unknown'}</strong><br><small class="text-muted">${st ? st.roll_number : ''}</small></td>
+                                    <td><strong class="text-dark">${srv ? srv.name : 'Service'}</strong></td>
+                                    <td class="small text-muted">${r.purpose}</td>
+                                    <td>${renderBadge(r.status)}</td>
+                                    <td>
+                                        ${r.status === 'in_progress' ? `
+                                            <form method="POST" action="/staff/approvals" class="d-inline">
+                                                <input type="hidden" name="request_id" value="${r.id}">
+                                                <button type="submit" name="action" value="approve" class="btn btn-sm btn-success rounded-pill px-3 me-1"><i class="bi bi-check-lg"></i> Approve</button>
+                                                <button type="submit" name="action" value="reject" class="btn btn-sm btn-danger rounded-pill px-3"><i class="bi bi-x-lg"></i> Reject</button>
+                                            </form>
+                                        ` : '<span class="text-muted small">Processed</span>'}
+                                    </td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("Service Approvals", user, content, pathname));
+    }
+
+    // 5.7 ADMIN CONTROL CENTER & ANALYTICS
+    if (pathname === '/admin/dashboard' || pathname === '/staff/dashboard') {
         const data = loadDb();
         const totalStudents = data.students.length;
         const totalDues = data.dues.filter(d => d.status === 'pending').length;
@@ -1024,6 +1349,13 @@ function fill(u, p) {
                 <div class="col-md-8">
                     <h2 class="fw-bold text-dark mb-1">${user.role === 'admin' ? 'Master Control Center & Analytics' : 'Department Staff Workspace'}</h2>
                     <p class="text-muted mb-0">System continuous clearance oversight, due issuance, and audit operations.</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    ${user.role === 'admin' ? `
+                        <a href="/admin/override" class="btn btn-danger rounded-pill px-4 fw-bold shadow-sm"><i class="bi bi-key me-1"></i> Emergency Override</a>
+                    ` : `
+                        <a href="/staff/students" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm"><i class="bi bi-people me-1"></i> Manage Students</a>
+                    `}
                 </div>
             </div>
 
@@ -1038,7 +1370,7 @@ function fill(u, p) {
                 <div class="col-md-3">
                     <div class="kpi-card">
                         <div class="kpi-icon bg-danger-subtle text-danger me-3"><i class="bi bi-wallet2"></i></div>
-                        <div><h3 class="fw-bold mb-0 text-dark">₹${totalDuesAmount.toFixed(0)}</h3><span class="text-muted small">Pending Dues Amount</span></div>
+                        <div><h3 class="fw-bold mb-0 text-dark">₹${totalDuesAmount.toFixed(0)}</h3><span class="text-muted small">Pending Dues</span></div>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -1055,14 +1387,14 @@ function fill(u, p) {
                 </div>
             </div>
 
-            <!-- Student Roster Quick Overview -->
+            <!-- Student Clearance Registry -->
             <div class="card card-glass border-0 overflow-hidden mb-4">
                 <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
                     <h5 class="fw-bold mb-0 text-dark"><i class="bi bi-mortarboard me-2 text-primary"></i> Active Student Clearance Registry</h5>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light"><tr><th>Roll No</th><th>Student Name</th><th>Dept</th><th>Overall Status</th><th>Pending Depts</th></tr></thead>
+                        <thead class="table-light"><tr><th>Roll No</th><th>Student Name</th><th>Dept</th><th>Overall Status</th><th>Pending Depts / Reasons</th></tr></thead>
                         <tbody>
                             ${data.students.map(st => {
                                 const summ = getStudentClearanceSummary(st.id);
@@ -1072,7 +1404,7 @@ function fill(u, p) {
                                     <td class="fw-bold text-dark">${st.full_name}</td>
                                     <td><span class="badge bg-light text-secondary">${d ? d.code : 'GEN'}</span></td>
                                     <td>${renderBadge(summ.overall_status)}</td>
-                                    <td>${summ.pending_departments.map(p => `<span class="badge bg-danger-subtle text-danger me-1">${p.name}: ${p.reason}</span>`).join('') || '<span class="text-success small fw-bold">All 5 Cleared</span>'}</td>
+                                    <td>${summ.pending_departments.map(p => `<span class="badge bg-danger-subtle text-danger me-1 mb-1">${p.name}: ${p.reason}</span>`).join('') || '<span class="text-success small fw-bold"><i class="bi bi-check-circle me-1"></i> All 5 Cleared</span>'}</td>
                                 </tr>`;
                             }).join('')}
                         </tbody>
@@ -1081,7 +1413,220 @@ function fill(u, p) {
             </div>
         `;
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        return res.end(renderLayout(user.role === 'admin' ? "Admin Dashboard" : "Staff Dashboard", user, content, pathname));
+        return res.end(renderLayout(user.role === 'admin' ? "Admin Control Center" : "Staff Portal", user, content, pathname));
+    }
+
+    // 5.8 ADMIN EMERGENCY OVERRIDE
+    if (pathname === '/admin/override') {
+        const data = loadDb();
+
+        if (method === 'POST') {
+            return getBody(params => {
+                const stId = Number(params.student_id);
+                const justification = (params.justification || '').trim();
+
+                if (stId && justification) {
+                    // Force clear across all departments
+                    for (const dept of data.departments) {
+                        let rec = data.clearance_status.find(cs => cs.student_id === stId && cs.department_id === dept.id);
+                        if (rec) {
+                            rec.status = 'cleared';
+                            rec.remarks = `ADMIN OVERRIDE: ${justification}`;
+                            rec.updated_at = new Date().toISOString().replace('T', ' ').substring(0, 19);
+                        } else {
+                            data.clearance_status.push({
+                                id: data.clearance_status.length + 1,
+                                student_id: stId,
+                                department_id: dept.id,
+                                status: 'cleared',
+                                remarks: `ADMIN OVERRIDE: ${justification}`,
+                                updated_at: new Date().toISOString().replace('T', ' ').substring(0, 19)
+                            });
+                        }
+                    }
+                    // Waive pending dues for this student
+                    for (const due of data.dues) {
+                        if (due.student_id === stId && due.status === 'pending') {
+                            due.status = 'waived';
+                        }
+                    }
+                    saveDb();
+                    logAudit(user.id, 'ADMIN_CLEARANCE_OVERRIDE', 'STUDENT', `Emergency clearance override for student ${stId}: ${justification}`);
+                }
+                return redirect('/admin/override?success=1');
+            });
+        }
+
+        const successParam = parsedUrl.searchParams.get('success');
+        const content = `
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-key me-2 text-danger"></i> Emergency Administrative Clearance Override</h2>
+                    <p class="text-muted mb-0">Sanction discretionary clearance for graduation, emergency medical transfers, or registrar exemptions.</p>
+                </div>
+            </div>
+
+            ${successParam === '1' ? `
+                <div class="alert alert-success alert-dismissible fade show rounded-4 mb-4" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i> Emergency clearance override executed successfully! Student is now 100% CLEARED across all departments.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            ` : ''}
+
+            <div class="card card-glass p-4 p-md-5 border-0 max-w-2xl">
+                <form method="POST" action="/admin/override" onsubmit="return confirm('WARNING: Are you sure you want to execute an emergency clearance override for this student?');">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Select Target Student <span class="text-danger">*</span></label>
+                        <select class="form-select form-select-lg" name="student_id" required>
+                            <option value="">-- Choose Student by Roll Number or Name --</option>
+                            ${data.students.map(st => `<option value="${st.id}">[${st.roll_number}] ${st.full_name}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Mandatory Justification / Exemption Order No. <span class="text-danger">*</span></label>
+                        <textarea class="form-control" name="justification" rows="3" required placeholder="State official registrar executive approval reference or justification..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-lg rounded-pill px-5 fw-bold shadow">
+                        <i class="bi bi-shield-lock-fill me-2"></i> Execute Emergency Clearance Override
+                    </button>
+                </form>
+            </div>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("Emergency Override", user, content, pathname));
+    }
+
+    // 5.9 ADMIN DUES & WAIVER
+    if (pathname === '/admin/dues') {
+        const data = loadDb();
+
+        if (method === 'POST') {
+            return getBody(params => {
+                const dueId = Number(params.due_id);
+                const due = data.dues.find(d => d.id === dueId);
+                if (due) {
+                    due.status = 'waived';
+                    saveDb();
+                    logAudit(user.id, 'ADMIN_WAIVE_DUE', 'DUE', `Waived due ID ${dueId} for student ${due.student_id}`);
+                }
+                return redirect('/admin/dues');
+            });
+        }
+
+        const dues = data.dues;
+        const content = `
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-wallet2 me-2 text-primary"></i> Master System Dues Directory</h2>
+                    <p class="text-muted mb-0">System-wide overview of active, settled, and waived student penalties.</p>
+                </div>
+            </div>
+
+            <div class="card card-glass border-0 overflow-hidden mb-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr><th>ID</th><th>Student</th><th>Department</th><th>Title & Particulars</th><th>Amount</th><th>Status</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            ${dues.map(d => {
+                                const st = data.students.find(s => s.id === d.student_id);
+                                const dept = data.departments.find(dp => dp.id === d.department_id);
+                                return `<tr>
+                                    <td><code>#${d.id}</code></td>
+                                    <td><strong class="text-dark">${st ? st.full_name : 'Unknown'}</strong><br><small class="text-muted">${st ? st.roll_number : ''}</small></td>
+                                    <td><span class="badge bg-light text-secondary">${dept ? dept.name : 'General'}</span></td>
+                                    <td><strong class="text-dark">${d.title}</strong><br><small class="text-muted">${d.description}</small></td>
+                                    <td class="fw-bold text-danger">₹${Number(d.amount).toFixed(2)}</td>
+                                    <td>${renderBadge(d.status)}</td>
+                                    <td>
+                                        ${d.status === 'pending' ? `
+                                            <form method="POST" action="/admin/dues" class="d-inline" onsubmit="return confirm('Waive this fine for the student?');">
+                                                <input type="hidden" name="due_id" value="${d.id}">
+                                                <button type="submit" class="btn btn-sm btn-outline-warning rounded-pill px-3">Waive Fine</button>
+                                            </form>
+                                        ` : '<span class="text-muted small">Settled</span>'}
+                                    </td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("System Dues", user, content, pathname));
+    }
+
+    // 5.10 ADMIN STUDENTS DIRECTORY
+    if (pathname === '/admin/students') {
+        const data = loadDb();
+        const content = `
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-mortarboard me-2 text-primary"></i> Master Student Directory</h2>
+                    <p class="text-muted mb-0">Directory of registered students and real-time clearance status.</p>
+                </div>
+            </div>
+
+            <div class="card card-glass border-0 overflow-hidden mb-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr><th>Roll Number</th><th>Student Name</th><th>Department</th><th>Batch & Sem</th><th>Overall Clearance</th></tr>
+                        </thead>
+                        <tbody>
+                            ${data.students.map(st => {
+                                const summ = getStudentClearanceSummary(st.id);
+                                const d = data.departments.find(dp => dp.id === st.department_id);
+                                return `<tr>
+                                    <td><code>${st.roll_number}</code></td>
+                                    <td><strong class="text-dark">${st.full_name}</strong><br><small class="text-muted">${st.email}</small></td>
+                                    <td><span class="badge bg-light text-secondary">${d ? d.name : 'Engineering'}</span></td>
+                                    <td class="small">Batch: ${st.batch}<br>Semester ${st.semester}</td>
+                                    <td>${renderBadge(summ.overall_status)}</td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("Student Directory", user, content, pathname));
+    }
+
+    // 5.11 ADMIN AUDIT LOGS
+    if (pathname === '/admin/audit') {
+        const data = loadDb();
+        const content = `
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h2 class="fw-bold text-dark mb-1"><i class="bi bi-journal-text me-2 text-primary"></i> Tamper-Proof Audit Trail</h2>
+                    <p class="text-muted mb-0">Cryptographic audit log recording every user sign-in, status modification, fine issuance, and override.</p>
+                </div>
+            </div>
+
+            <div class="card card-glass border-0 overflow-hidden mb-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light"><tr><th>Timestamp</th><th>Action</th><th>Target Entity</th><th>Details</th></tr></thead>
+                        <tbody>
+                            ${data.audit_logs.map(a => `
+                                <tr>
+                                    <td class="small font-monospace">${a.created_at}</td>
+                                    <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">${a.action}</span></td>
+                                    <td><span class="badge bg-light text-secondary">${a.entity_type}</span></td>
+                                    <td class="small text-dark">${a.details}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(renderLayout("Audit Logs", user, content, pathname));
     }
 
     // Fallback 404
@@ -1095,4 +1640,3 @@ server.listen(PORT, '0.0.0.0', () => {
     console.log(` Local URL: http://localhost:${PORT}`);
     console.log(`====================================================`);
 });
-
