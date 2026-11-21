@@ -1938,40 +1938,40 @@
       "student_id": 9,
       "department_id": 1,
       "status": "cleared",
-      "remarks": "All requirements verified & approved",
-      "updated_at": "2026-11-20 10:00:00"
+      "remarks": "All requirements verified & approved (Dues fully settled)",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 42,
       "student_id": 9,
       "department_id": 2,
       "status": "cleared",
-      "remarks": "All requirements verified & approved",
-      "updated_at": "2026-11-20 10:00:00"
+      "remarks": "All requirements verified & approved (Dues fully settled)",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 43,
       "student_id": 9,
       "department_id": 3,
-      "status": "pending",
-      "remarks": "Hostel: Mess dues pending reconciliation",
-      "updated_at": "2026-11-20 10:00:00"
+      "status": "cleared",
+      "remarks": "All requirements verified & approved (Dues fully settled)",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 44,
       "student_id": 9,
       "department_id": 4,
       "status": "cleared",
-      "remarks": "All requirements verified & approved",
-      "updated_at": "2026-11-20 10:00:00"
+      "remarks": "All requirements verified & approved (Dues fully settled)",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 45,
       "student_id": 9,
       "department_id": 5,
       "status": "cleared",
-      "remarks": "All requirements verified & approved",
-      "updated_at": "2026-11-20 10:00:00"
+      "remarks": "All requirements verified & approved (Dues fully settled)",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 46,
@@ -2777,9 +2777,9 @@
       "id": 146,
       "student_id": 30,
       "department_id": 1,
-      "status": "cleared",
-      "remarks": "All requirements verified & approved",
-      "updated_at": "2026-11-20 10:00:00"
+      "status": "pending",
+      "remarks": "Library: Overdue reference book and fine pending return",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 147,
@@ -2825,9 +2825,9 @@
       "id": 152,
       "student_id": 31,
       "department_id": 2,
-      "status": "cleared",
-      "remarks": "All requirements verified & approved",
-      "updated_at": "2026-11-20 10:00:00"
+      "status": "pending",
+      "remarks": "Accounts: Lab maintenance fee surcharge pending settlement",
+      "updated_at": "2026-11-21 09:28:22"
     },
     {
       "id": 153,
@@ -4122,7 +4122,7 @@
       "title": "Hostel Mess Maintenance Balance",
       "description": "Room 304 mess utility maintenance.",
       "amount": 400,
-      "status": "pending",
+      "status": "settled",
       "created_at": "2026-11-17 14:15:00"
     },
     {
@@ -4134,6 +4134,26 @@
       "amount": 150,
       "status": "pending",
       "created_at": "2026-11-18 10:00:00"
+    },
+    {
+      "id": 5,
+      "student_id": 30,
+      "department_id": 1,
+      "title": "Library Overdue Book Fine",
+      "description": "Pattern Recognition and Machine Learning (Bishop) overdue by 14 days",
+      "amount": 350,
+      "status": "pending",
+      "created_at": "2026-11-21 09:28:22"
+    },
+    {
+      "id": 6,
+      "student_id": 31,
+      "department_id": 2,
+      "title": "Semester V AI Computing Lab Fee Balance",
+      "description": "Deep Learning Lab equipment usage surcharge balance",
+      "amount": 500,
+      "status": "pending",
+      "created_at": "2026-11-21 09:28:22"
     }
   ],
   "disputes": [
@@ -4222,6 +4242,78 @@
     }
   ],
   "audit_logs": [
+    {
+      "id": 13,
+      "user_id": 1,
+      "action": "DUES_UPDATE",
+      "entity_type": "STUDENTS",
+      "details": "Cleared all dues for TU6241103111020 (Anjana). Issued fine ₹350 for TU6241103111085 (Ashrith) and ₹500 for TU6241103111086 (Navaneeth).",
+      "created_at": "2026-11-21 09:28:22"
+    },
+    {
+      "id": 12,
+      "user_id": 108,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User TU6241103111020 (student) logged in successfully.",
+      "created_at": "2026-11-21 09:25:24"
+    },
+    {
+      "id": 11,
+      "user_id": 129,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User TU6241103111085 (student) logged in successfully.",
+      "created_at": "2026-11-21 09:24:14"
+    },
+    {
+      "id": 10,
+      "user_id": 131,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User TU6241103111088 (student) logged in successfully.",
+      "created_at": "2026-11-21 09:22:16"
+    },
+    {
+      "id": 9,
+      "user_id": 2,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User staff_lib (staff) logged in successfully.",
+      "created_at": "2026-11-21 09:21:09"
+    },
+    {
+      "id": 8,
+      "user_id": 3,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User staff_acc (staff) logged in successfully.",
+      "created_at": "2026-11-21 09:20:50"
+    },
+    {
+      "id": 7,
+      "user_id": 4,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User staff_hst (staff) logged in successfully.",
+      "created_at": "2026-11-21 09:20:19"
+    },
+    {
+      "id": 6,
+      "user_id": 6,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User staff_exm (staff) logged in successfully.",
+      "created_at": "2026-11-21 09:17:29"
+    },
+    {
+      "id": 5,
+      "user_id": 1,
+      "action": "USER_LOGIN",
+      "entity_type": "AUTH",
+      "details": "User admin (admin) logged in successfully.",
+      "created_at": "2026-11-21 09:14:40"
+    },
     {
       "id": 4,
       "user_id": 108,
