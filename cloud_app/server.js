@@ -393,7 +393,7 @@ const server = http.createServer((req, res) => {
                 }
 
                 res.writeHead(200, { 'Content-Type': 'text/html' });
-                return res.end(renderLoginPage('Invalid Register Number or Password. Please select any account below.'));
+                return res.end(renderLoginPage('Invalid Register Number or Password. Please verify your credentials.'));
             });
         }
 
@@ -402,7 +402,6 @@ const server = http.createServer((req, res) => {
     }
 
     function renderLoginPage(error = '') {
-        const data = loadDb();
         return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -412,79 +411,55 @@ const server = http.createServer((req, res) => {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <style>
-        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .login-card { max-width: 520px; width: 100%; border-radius: 1.25rem; background: #ffffff; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; font-family: system-ui, -apple-system, sans-serif; }
+        .login-card { max-width: 440px; width: 100%; border-radius: 1.25rem; background: #ffffff; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        .form-control:focus { border-color: #4f46e5; box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.15); }
     </style>
 </head>
 <body>
 <div class="login-card p-4 p-md-5">
     <div class="text-center mb-4">
         <a href="/" class="text-decoration-none">
-            <i class="bi bi-mortarboard-fill text-primary display-4 mb-1 d-inline-block"></i>
-            <h3 class="fw-bold text-dark mb-0">Takshashila University</h3>
+            <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-inline-block mb-3">
+                <i class="bi bi-mortarboard-fill display-5"></i>
+            </div>
+            <h3 class="fw-extrabold text-dark mb-1">Takshashila University</h3>
         </a>
-        <p class="text-muted small mb-0">Dept. of Artificial Intelligence & Data Science (AIDS)</p>
-        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill mt-1">V Semester Clearance Portal</span>
+        <p class="text-muted small mb-1 fw-medium">Department of Artificial Intelligence & Data Science</p>
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1">V Semester Portal</span>
     </div>
 
-    <!-- Quick 1-Click Demo Buttons -->
-    <div class="bg-light p-3 rounded-3 mb-3 border">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="small fw-bold text-secondary"><i class="bi bi-key-fill text-warning me-1"></i> Quick 1-Click Logins</span>
-            <span class="badge bg-secondary-subtle text-secondary" style="font-size:0.65rem;">Click to Autofill</span>
-        </div>
-        <div class="d-flex flex-wrap gap-2">
-            <button type="button" class="btn btn-sm btn-outline-danger rounded-pill fw-semibold py-1 px-2" style="font-size:0.75rem;" onclick="fill('admin','Admin@123')"><i class="bi bi-shield-lock me-1"></i> Admin</button>
-            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill fw-semibold py-1 px-2" style="font-size:0.75rem;" onclick="fill('staff_aids','Staff@123')"><i class="bi bi-person-badge me-1"></i> Dr. M Senthil (HOD)</button>
-            <button type="button" class="btn btn-sm btn-outline-success rounded-pill fw-semibold py-1 px-2" style="font-size:0.75rem;" onclick="fill('TU6241103111088','Student@123')"><i class="bi bi-star-fill me-1"></i> MANNERU HARINATH</button>
-            <button type="button" class="btn btn-sm btn-outline-dark rounded-pill fw-semibold py-1 px-2" style="font-size:0.75rem;" onclick="fill('TU6241103111002','Student@123')"><i class="bi bi-mortarboard me-1"></i> AJAY N</button>
-            <button type="button" class="btn btn-sm btn-outline-info rounded-pill fw-semibold py-1 px-2" style="font-size:0.75rem;" onclick="fill('staff_lib','Staff@123')"><i class="bi bi-book me-1"></i> Library</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill fw-semibold py-1 px-2" style="font-size:0.75rem;" onclick="fill('staff_acc','Staff@123')"><i class="bi bi-cash me-1"></i> Accounts</button>
-        </div>
-    </div>
-
-    <!-- Student Select Dropdown for all 62 students -->
-    <div class="mb-3 p-2 bg-white rounded border">
-        <label class="form-label small fw-bold text-muted mb-1"><i class="bi bi-people-fill text-primary me-1"></i> Or Select Any of 62 Students:</label>
-        <div class="input-group input-group-sm">
-            <select class="form-select form-select-sm" id="studentPicker" onchange="pickStudent()">
-                <option value="">-- Choose student to load credentials --</option>
-                ${data.students.map(s => `<option value="${s.roll_number}">${s.roll_number} - ${s.full_name}</option>`).join('')}
-            </select>
-        </div>
-    </div>
-
-    ${error ? `<div class="alert alert-danger py-2 small mb-3"><i class="bi bi-exclamation-circle me-1"></i> ${error}</div>` : ''}
+    ${error ? `<div class="alert alert-danger py-2 px-3 small mb-3 rounded-3"><i class="bi bi-exclamation-circle-fill me-2"></i> ${error}</div>` : ''}
 
     <form method="POST" action="/login">
         <div class="mb-3">
-            <label class="form-label fw-semibold small">Register Number / Username / Email</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="e.g. TU6241103111088 or admin" required autofocus>
+            <label class="form-label fw-bold text-dark small">Register Number / Staff ID</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control border-start-0" id="username" name="username" placeholder="e.g. TU6241103111088" required autofocus>
+            </div>
         </div>
         <div class="mb-4">
-            <label class="form-label fw-semibold small">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password (default: Student@123)" required>
+            <div class="d-flex justify-content-between align-items-center mb-1">
+                <label class="form-label fw-bold text-dark small mb-0">Password</label>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-lock"></i></span>
+                <input type="password" class="form-control border-start-0" id="password" name="password" placeholder="Enter your password" required>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold shadow-sm">
-            <i class="bi bi-box-arrow-in-right me-2"></i> Access My Portal
+        <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-3 fw-bold shadow-sm">
+            <i class="bi bi-box-arrow-in-right me-2"></i> Sign In to Portal
         </button>
     </form>
-    <div class="text-center mt-3">
-        <a href="/" class="small text-secondary text-decoration-none">&larr; Back to University Home</a>
+
+    <div class="border-top pt-3 mt-4 text-center">
+        <span class="text-muted d-block small" style="font-size: 0.78rem;">
+            <i class="bi bi-shield-check text-success me-1"></i> Takshashila University Authentication System
+        </span>
+        <a href="/" class="small text-secondary text-decoration-none mt-2 d-inline-block">&larr; Return to University Home</a>
     </div>
 </div>
-<script>
-function fill(u, p) {
-    document.getElementById('username').value = u;
-    document.getElementById('password').value = p;
-}
-function pickStudent() {
-    const reg = document.getElementById('studentPicker').value;
-    if (reg) {
-        fill(reg, 'Student@123');
-    }
-}
-</script>
 </body>
 </html>`;
     }

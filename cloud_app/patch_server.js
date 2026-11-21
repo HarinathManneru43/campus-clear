@@ -41,3 +41,4 @@ function loadDb(force = false) {
 
 content = content.replace(oldLoadDb, newLoadDb);
 console.log("Updated loadDb");
+
