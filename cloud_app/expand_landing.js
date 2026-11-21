@@ -867,3 +867,4 @@ code = code.replace(oldLandingRegex, expandedLandingPage);
 
 fs.writeFileSync(serverJsPath, code, 'utf8');
 console.log("Successfully created long, rich landing page with white glassy buttons and interactive sections!");
+
